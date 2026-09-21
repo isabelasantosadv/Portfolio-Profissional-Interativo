@@ -1,0 +1,87 @@
+{
+  "name": "Isabela Schattgen",
+  "headline": {
+    "pt": "Advogada de negócios na interseção entre contratos, tecnologia, regulação e governança.",
+    "en": "Business & Technology Lawyer working at the intersection of contracts, technology, regulation and governance.",
+    "es": "Abogada de negocios especializada en la intersección entre contratos, tecnología, regulación y gobierno corporativo."
+  },
+  "tagline": {
+    "pt": "Direito para negócios complexos.",
+    "en": "Law for complex businesses.",
+    "es": "Derecho para negocios complejos."
+  },
+  "perspectives": {
+    "business": {
+      "title": {
+        "pt": "Business Counsel",
+        "en": "Business Counsel",
+        "es": "Business Counsel"
+      },
+      "description": {
+        "pt": "Contratos, deals, negociação, parcerias e aconselhamento empresarial.",
+        "en": "Contracts, deals, negotiation, partnerships and business counseling.",
+        "es": "Contratos, deals, negociación, alianzas y asesoramiento empresarial."
+      }
+    },
+    "technology": {
+      "title": {
+        "pt": "Technology Lawyer",
+        "en": "Technology Lawyer",
+        "es": "Technology Lawyer"
+      },
+      "description": {
+        "pt": "Produtos digitais, contratos de tecnologia, IA, privacidade e operações jurídicas.",
+        "en": "Digital products, technology contracts, AI, privacy and legal operations.",
+        "es": "Productos digitales, contratos tecnológicos, IA, privacidad y operaciones jurídicas."
+      }
+    },
+    "regulation": {
+      "title": {
+        "pt": "Financial Regulation",
+        "en": "Financial Regulation",
+        "es": "Financial Regulation"
+      },
+      "description": {
+        "pt": "Serviços financeiros, Open Finance, pagamentos e negócios regulados.",
+        "en": "Financial services, Open Finance, payments and regulated businesses.",
+        "es": "Servicios financieros, Open Finance, pagos y negocios regulados."
+      }
+    },
+    "governance": {
+      "title": {
+        "pt": "Governance & Compliance",
+        "en": "Governance & Compliance",
+        "es": "Governance & Compliance"
+      },
+      "description": {
+        "pt": "Governança, risco, compliance e governança de IA.",
+        "en": "Governance, risk, compliance and AI governance.",
+        "es": "Gobierno corporativo, riesgos, compliance y gobernanza de IA."
+      }
+    },
+    "board": {
+      "title": {
+        "pt": "Board Advisory",
+        "en": "Board Advisory",
+        "es": "Board Advisory"
+      },
+      "description": {
+        "pt": "Apoio estratégico a decisões na interseção entre negócio, tecnologia e regulação.",
+        "en": "Strategic decision support at the intersection of business, technology and regulation.",
+        "es": "Apoyo estratégico a decisiones en la intersección entre negocio, tecnología y regulación."
+      }
+    },
+    "research": {
+      "title": {
+        "pt": "AI & Research",
+        "en": "AI & Research",
+        "es": "AI & Research"
+      },
+      "description": {
+        "pt": "IA, governança tecnológica, pesquisa e docência.",
+        "en": "AI, technology governance, research and teaching.",
+        "es": "IA, gobernanza tecnológica, investigación y docencia."
+      }
+    }
+  }
+}
