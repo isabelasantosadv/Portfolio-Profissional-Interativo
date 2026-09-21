@@ -30,5 +30,29 @@ function bindActions(){
 }
 
 let profileData={perspectives:{}};
-async function loadProfile(){try{const r=await fetch("./data/profile.json");if(!r.ok)throw new Error("profile data unavailable");profileData=await r.json();renderModes();}catch(e){console.warn("Structured profile data could not be loaded.",e)}}
-document.getElementById("qFloat").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("floatingChat").classList.toggle("minimized"));bindActions();setLang("pt");loadProfile();
+async function loadProfile(){
+ try{
+  const r=await fetch("./data/profile.json");
+  if(!r.ok)throw new Error("profile data unavailable");
+  profileData=await r.json();
+  renderModes();
+ }catch(e){
+  console.warn("Structured profile data could not be loaded.",e);
+  renderModesFallback();
+ }
+}
+function renderModesFallback(){
+ const p=document.getElementById("modes");
+ p.innerHTML=Object.entries(modes).map(([k,m])=>{
+  const d={title:{pt:k,en:k,es:k},description:{pt:"Explore esta perspectiva profissional.",en:"Explore this professional perspective.",es:"Explora esta perspectiva profesional."}};
+  return '<button class="card modeCard" type="button" data-mode="'+k+'"><div class="role">'+d.title[lang]+'</div><div class="desc">'+d.description[lang]+'</div><span class="pill">'+m.tag[lang]+' · →</span></button>'
+ }).join("");
+ p.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+}
+function init(){
+ bindActions();
+ document.getElementById("qFloat").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
+ document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("floatingChat").classList.toggle("minimized"));
+ loadProfile().then(()=>{setLang("pt");renderProof();});
+}
+init();
