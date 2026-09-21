@@ -4,3 +4,37 @@
 .modeCard,.evidenceCard{text-decoration:none;width:100%;font:inherit}.modeCard:focus-visible,.evidenceCard:focus-visible,.reset:focus-visible,.socialLinks a:focus-visible{outline:2px solid #171717;outline-offset:3px}.modeCard .pill,.evidenceCard .pill{transition:.18s}.modeCard:hover .pill,.evidenceCard:hover .pill{background:#171717;color:#fff}.evidenceDetail{display:none;margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.evidenceDetail.active{display:block}.detailKicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.evidenceDetail h3{margin:0 0 8px;font-size:22px}.evidenceDetail p{margin:0;color:var(--muted);line-height:1.55}.detailActions{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}.detailActions a{color:var(--ink);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}.floatingChat{position:fixed;right:24px;bottom:24px;width:min(390px,calc(100vw - 32px));z-index:15;filter:drop-shadow(0 14px 32px #0002)}.floatingChat .chat{padding:18px;border-radius:22px;grid-template-columns:1fr;gap:12px}.floatingChat .chat h2{font-size:22px!important}.floatingChat .chat p{margin:6px 0 0;font-size:12px}.floatingChat .answer{max-height:110px;overflow:auto}.floatingChat .minimize{position:absolute;right:13px;top:13px;border:0;background:#333;color:#fff;border-radius:50%;width:28px;height:28px;cursor:pointer}.floatingChat.minimized .chatBody{display:none}.floatingChat.minimized{width:170px}.floatingChat.minimized .chat{padding:12px}.floatingChat.minimized .chatIntro{display:none}.floatingChat.minimized .minimize{position:static;float:right}.socialLinks{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}.socialLinks a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent}.socialLinks a:hover{color:var(--ink);border-color:var(--line)}footer>div{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 @media(max-width:800px){.floatingChat{right:12px;bottom:12px}.socialLinks{justify-content:flex-start}footer{display:block}footer>div+div{margin-top:12px}}
 .chatKicker{color:#aaa}.floatingChat .chatBody>strong,.floatingChat strong{font-size:22px;letter-spacing:-.03em}.floatingChat .chatIntro p{margin:6px 0 0}
+
+/* Ask Isabela: isolate the floating interface from page text without changing its behavior. */
+.floatingChat{
+  isolation:isolate;
+  background:rgba(25,25,25,.96);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:22px;
+  box-shadow:0 16px 44px rgba(0,0,0,.16),0 3px 12px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+.floatingChat::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:rgba(25,25,25,.82);
+  backdrop-filter:blur(18px) saturate(115%);
+  -webkit-backdrop-filter:blur(18px) saturate(115%);
+  pointer-events:none;
+}
+.floatingChat .chatBody{
+  position:relative;
+  z-index:1;
+  padding:18px;
+}
+.floatingChat.minimized{
+  background:rgba(25,25,25,.97);
+  overflow:hidden;
+}
+.floatingChat.minimized .chatBody{display:none}
+@media(max-width:800px){
+  .floatingChat{right:12px;bottom:12px}
+}
