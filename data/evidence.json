@@ -1,0 +1,82 @@
+{
+  "items": [
+    {
+      "id": "business-contracts",
+      "title": {
+        "pt": "Business counseling & contratos",
+        "en": "Business counseling & contracts",
+        "es": "Business counseling y contratos"
+      },
+      "description": {
+        "pt": "Experiência jurídica corporativa, contratos, parcerias, fornecedores, negociação e estruturação de negócios.",
+        "en": "Corporate legal work, contracts, partnerships, vendors, negotiation and business structuring.",
+        "es": "Experiencia jurídica corporativa, contratos, alianzas, proveedores, negociación y estructuración de negocios."
+      }
+    },
+    {
+      "id": "digital-open-finance",
+      "title": {
+        "pt": "Negócios digitais & Open Finance",
+        "en": "Digital business & Open Finance",
+        "es": "Negocios digitales y Open Finance"
+      },
+      "description": {
+        "pt": "Atuação no Banco do Brasil em governança, inovação, novos negócios, relacionamento com startups e Open Finance.",
+        "en": "Banco do Brasil experience in governance, innovation, new business, startup relations and Open Finance.",
+        "es": "Experiencia en Banco do Brasil en gobierno corporativo, innovación, nuevos negocios, startups y Open Finance."
+      }
+    },
+    {
+      "id": "governance-risk",
+      "title": {
+        "pt": "Governança, risco & compliance",
+        "en": "Governance, risk & compliance",
+        "es": "Gobierno, riesgo y compliance"
+      },
+      "description": {
+        "pt": "Experiência em auditoria, governança, gestão de riscos, compliance e estruturação organizacional.",
+        "en": "Experience in audit, governance, risk management, compliance and organizational structuring.",
+        "es": "Experiencia en auditoría, gobierno corporativo, gestión de riesgos, compliance y estructuración organizativa."
+      }
+    },
+    {
+      "id": "technology-ai",
+      "title": {
+        "pt": "Technology & AI",
+        "en": "Technology & AI",
+        "es": "Tecnología e IA"
+      },
+      "description": {
+        "pt": "Especialização em plataformas digitais pelo MIT, pesquisa e docência em tecnologia, IA, ética e proteção de dados.",
+        "en": "MIT specialization in digital platforms, research and teaching in technology, AI, ethics and data protection.",
+        "es": "Especialización del MIT en plataformas digitales, investigación y docencia en tecnología, IA, ética y protección de datos."
+      }
+    },
+    {
+      "id": "startups-advisory",
+      "title": {
+        "pt": "Startups & advisory",
+        "en": "Startups & advisory",
+        "es": "Startups y advisory"
+      },
+      "description": {
+        "pt": "Atuação corporativa e em startups; Go Digital e Black Tech Lawyers.",
+        "en": "Corporate and startup work; Go Digital and Black Tech Lawyers.",
+        "es": "Actuación corporativa y en startups; Go Digital y Black Tech Lawyers."
+      }
+    },
+    {
+      "id": "research-teaching",
+      "title": {
+        "pt": "Pesquisa & ensino",
+        "en": "Research & teaching",
+        "es": "Investigación y docencia"
+      },
+      "description": {
+        "pt": "Mestrado em Direito, pesquisa em tecnologia e professora convidada da ESA/SP.",
+        "en": "Master's in Law, technology research and guest teaching at ESA/SP.",
+        "es": "Máster en Derecho, investigación tecnológica y docencia invitada en ESA/SP."
+      }
+    }
+  ]
+}
