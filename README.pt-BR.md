@@ -70,6 +70,22 @@ O sistema não cria personas fictícias nem versões diferentes do profissional.
 
 Faça um fork e substitua os dados profissionais, textos e identidade visual pelos seus. A arquitetura estática facilita inspeção, customização e publicação no GitHub Pages.
 
+## Personalização do template
+
+1. Faça um fork do repositório.
+2. Substitua `data/profile.json` pela sua identidade profissional e suas perspectivas.
+3. Substitua `data/evidence.json` por evidências estruturadas da sua experiência.
+4. Ajuste a identidade visual em `index.html`.
+5. Publique pelo GitHub Pages.
+
+A arquitetura separa conteúdo e interface para que o mesmo sistema possa ser reutilizado por advogados, consultores, executivos, pesquisadores, designers e outros profissionais do conhecimento.
+
+## Descoberta e reutilização
+
+O repositório é documentado como template reutilizável, e não apenas como portfólio pessoal. Inclui READMEs multilíngues, metadados semânticos, dados profissionais estruturados e uma demonstração no GitHub Pages.
+
+Palavras-chave: template de portfólio profissional, currículo interativo, portfólio adaptativo, portfólio multilíngue, GitHub Pages, site pessoal, perfil profissional, portfólio baseado em evidências, portfólio com IA, portfólio jurídico.
+
 ## Tecnologia
 
 HTML · CSS · JavaScript puro · Web Speech API · GitHub Pages
