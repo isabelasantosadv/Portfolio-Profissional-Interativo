@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "purpose": "Source registry for Ask Isabela. Higher-authority sources should be preferred for factual or research answers.",
+  "authority_order": [
+    "original_publication",
+    "portfolio_evidence",
+    "official_professional_profile",
+    "professional_network_profile",
+    "secondary_source"
+  ],
+  "sources": [
+    {
+      "id": "portfolio-profile",
+      "type": "portfolio",
+      "authority": "portfolio_evidence",
+      "path": "../profile.json",
+      "scope": ["identity", "trajectory", "professional_perspectives"]
+    },
+    {
+      "id": "portfolio-evidence",
+      "type": "portfolio",
+      "authority": "portfolio_evidence",
+      "path": "../evidence.json",
+      "scope": ["contracts", "business_counseling", "open_finance", "governance", "technology", "AI", "startups", "research", "teaching"]
+    },
+    {
+      "id": "lattes",
+      "type": "academic_profile",
+      "authority": "official_professional_profile",
+      "url": "http://lattes.cnpq.br/9267824305716826",
+      "scope": ["academic_identity", "education", "research", "publications"]
+    },
+    {
+      "id": "orcid",
+      "type": "research_profile",
+      "authority": "official_professional_profile",
+      "url": "https://orcid.org/0009-0002-2062-1915",
+      "scope": ["research_identity", "publications", "research_outputs"]
+    },
+    {
+      "id": "web-of-science",
+      "type": "research_profile",
+      "authority": "official_professional_profile",
+      "identifier": "OGN-8088-2025",
+      "url": "https://www.webofscience.com/wos/author/record/OGN-8088-2025",
+      "scope": ["research_identity", "indexed_publications"]
+    },
+    {
+      "id": "google-scholar",
+      "type": "research_profile",
+      "authority": "official_professional_profile",
+      "url": "https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl",
+      "scope": ["research_identity", "citations", "publications"]
+    },
+    {
+      "id": "linkedin-articles",
+      "type": "professional_writing",
+      "authority": "professional_network_profile",
+      "url": "https://www.linkedin.com/in/isabelaschattgen/",
+      "scope": ["opinion_articles", "professional_voice", "current_topics"],
+      "note": "Use article content when available. The profile is an index, not a substitute for the original article."
+    }
+  ],
+  "known_public_articles": [
+    {
+      "id": "nyt-pele-2026",
+      "title": "O NYT acaba de rebaixar Pelé para a 3ª posição mundial. E o motivo é mais jurídico do que você imagina.",
+      "date": "2026-06-09",
+      "type": "opinion_article",
+      "source_id": "linkedin-articles",
+      "topics": ["governance", "law", "compliance", "corporate_context"],
+      "content_status": "index_only"
+    },
+    {
+      "id": "manual-antigovernanca-2026",
+      "title": "Manual da Antigovernança - Como seu sócio questionável te transforma em dano colateral (e como evitar)",
+      "date": "2026-01-29",
+      "type": "opinion_article",
+      "source_id": "linkedin-articles",
+      "topics": ["governance", "founders", "corporate_risk", "business_counseling"],
+      "content_status": "index_only"
+    },
+    {
+      "id": "master-vorcaro-lagoinha-2026",
+      "title": "Master, Vorcaro e Igreja Lagoinha: Onde termina o Reino e começa o Risco Regulatório?",
+      "date": "2026-01-19",
+      "type": "opinion_article",
+      "source_id": "linkedin-articles",
+      "topics": ["regulation", "governance", "risk", "public_interest"],
+      "content_status": "index_only"
+    }
+  ],
+  "ingestion_policy": {
+    "next_step": "replace index_only records with approved original article text or excerpts and metadata",
+    "do_not_scrape": "Do not copy third-party full text into the repository without permission.",
+    "research_use": "When article text is available in an approved source, index claims, concepts, examples and reasoning separately.",
+    "voice_use": "Use articles to learn reasoning patterns and vocabulary, not to fabricate personal memories or imitate private speech."
+  }
+}
