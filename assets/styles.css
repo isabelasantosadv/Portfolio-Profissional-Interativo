@@ -38,3 +38,92 @@
 @media(max-width:800px){
   .floatingChat{right:12px;bottom:12px}
 }
+
+
+/* Ask Isabela: reliable minimize/restore and explicit voice controls. */
+.floatingChat{
+  width:min(390px,calc(100vw - 32px));
+  max-height:min(78vh,720px);
+  display:flex;
+  flex-direction:column;
+  background:rgba(25,25,25,.97);
+  overflow:hidden;
+  transition:width .18s ease,border-radius .18s ease,box-shadow .18s ease;
+}
+.floatingChat .chatBody{
+  min-width:0;
+  max-height:calc(78vh - 20px);
+  overflow:auto;
+  padding:18px;
+}
+.floatingChat .minimize{
+  z-index:3;
+  display:grid;
+  place-items:center;
+  position:absolute;
+  right:10px;
+  top:10px;
+  width:32px;
+  height:32px;
+  padding:0;
+  border:1px solid #ffffff26;
+  border-radius:50%;
+  background:#343434;
+  color:#fff;
+  font-size:20px;
+}
+.floatingChat .chatIntro{padding-right:30px}
+.floatingChat .chatbox{align-items:center;gap:6px}
+.floatingChat .chatbox input{min-width:0;width:100%}
+.floatingChat .voice,.floatingChat .send{
+  flex:0 0 auto;
+  min-width:36px;
+  min-height:36px;
+  display:grid;
+  place-items:center;
+}
+.floatingChat .voice[aria-pressed="true"]{background:#dcdcd3;outline:2px solid #fff}
+.floatingChat .voiceStatus{font-size:12px;line-height:1.4;color:#d4d4ce;padding:0 2px}
+.floatingChat .voiceStatus:empty{display:none}
+.floatingChat .answer{overflow:auto;overflow-wrap:anywhere;max-height:min(26vh,220px);margin-bottom:0}
+.restoreChat{display:none}
+.floatingChat.minimized{
+  width:auto;
+  max-width:calc(100vw - 24px);
+  max-height:none;
+  display:block;
+  overflow:visible;
+  border:0;
+  border-radius:999px;
+  background:transparent;
+  box-shadow:none;
+  filter:none;
+}
+.floatingChat.minimized::before{display:none}
+.floatingChat.minimized .chatBody,
+.floatingChat.minimized .minimize{display:none}
+.floatingChat.minimized .restoreChat{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  min-height:46px;
+  padding:0 18px;
+  border:1px solid #ffffff25;
+  border-radius:999px;
+  background:#191919;
+  color:#fff;
+  box-shadow:0 8px 28px #0003;
+  font-weight:650;
+  font-size:13px;
+}
+.floatingChat.minimized .restoreChat:hover{background:#303030}
+.floatingChat button:focus-visible,
+.floatingChat input:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:520px){
+  .floatingChat{right:12px;bottom:12px;width:calc(100vw - 24px);max-height:75vh}
+  .floatingChat .chatBody{max-height:calc(75vh - 10px);padding:15px}
+  .floatingChat .answer{max-height:22vh}
+  .floatingChat.minimized{width:auto}
+}
+@media(prefers-reduced-motion:reduce){.floatingChat{transition:none}}
