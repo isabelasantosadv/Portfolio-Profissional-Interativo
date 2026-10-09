@@ -65,13 +65,84 @@ async function ask(){
   answerEl.dataset.sources=hit.sources.join(",");
  }else{delete answerEl.dataset.sources}
 }
-function speakAnswer(){if("speechSynthesis" in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(document.getElementById("answerFloat").textContent);u.lang=lang==="pt"?"pt-BR":lang==="en"?"en-US":"es-ES";u.rate=.98;speechSynthesis.speak(u)}}
+function voiceLocale(){return lang==="pt"?"pt-BR":lang==="en"?"en-US":"es-ES"}
+function setVoiceStatus(message){const status=document.getElementById("voiceStatus");if(status)status.textContent=message||""}
+function speakAnswer(){
+ const text=document.getElementById("answerFloat").textContent.trim();
+ if(!text)return;
+ if(!("speechSynthesis" in window)){setVoiceStatus(lang==="pt"?"Este navegador não oferece leitura de voz.":lang==="en"?"This browser does not support spoken answers.":"Este navegador no admite respuestas habladas.");return}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(text);
+ u.lang=voiceLocale();u.rate=.96;u.pitch=1;
+ const chooseVoice=()=>{
+  const voices=speechSynthesis.getVoices()||[];
+  const prefix=u.lang.toLowerCase().split("-")[0];
+  const matching=voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith(prefix));
+  const regional=matching.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase());
+  const preferred=matching.find(v=>/female|woman|feminina|luciana|francisca|samantha|zira|helena|monica/i.test(v.name||""));
+  u.voice=regional||preferred||matching[0]||null;
+ };
+ chooseVoice();
+ if("onvoiceschanged" in speechSynthesis && !speechSynthesis.getVoices().length){
+  speechSynthesis.addEventListener("voiceschanged",chooseVoice,{once:true});
+ }
+ u.onstart=()=>setVoiceStatus(lang==="pt"?"Lendo a resposta em voz alta.":lang==="en"?"Reading the answer aloud.":"Leyendo la respuesta en voz alta.");
+ u.onend=()=>setVoiceStatus("");
+ u.onerror=()=>setVoiceStatus(lang==="pt"?"Não foi possível reproduzir a voz neste navegador.":lang==="en"?"Could not play the voice in this browser.":"No se pudo reproducir la voz en este navegador.");
+ speechSynthesis.speak(u);
+}
+let activeRecognition=null;
+function startVoiceInput(){
+ const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+ const button=document.querySelector('[data-action="startVoiceInput"]');
+ if(!SpeechRecognition){
+  setVoiceStatus(lang==="pt"?"Seu navegador não oferece reconhecimento de voz. Digite sua pergunta no campo ao lado.":lang==="en"?"Speech recognition is not available in this browser. Type your question instead.":"Este navegador no admite reconocimiento de voz. Escribe tu pregunta.");
+  return;
+ }
+ if(activeRecognition){activeRecognition.stop();return}
+ const recognition=new SpeechRecognition();
+ activeRecognition=recognition;
+ recognition.lang=voiceLocale();
+ recognition.continuous=false;
+ recognition.interimResults=false;
+ recognition.maxAlternatives=1;
+ if(button){button.disabled=false;button.setAttribute("aria-pressed","true")}
+ setVoiceStatus(lang==="pt"?"Ouvindo… fale sua pergunta agora.":lang==="en"?"Listening… ask your question now.":"Escuchando… haz tu pregunta ahora.");
+ recognition.onresult=event=>{
+  const transcript=event.results&&event.results[0]&&event.results[0][0]?event.results[0][0].transcript.trim():"";
+  if(transcript){
+   document.getElementById("qFloat").value=transcript;
+   setVoiceStatus(lang==="pt"?"Pergunta reconhecida. Consultando a base…":lang==="en"?"Question recognized. Checking the knowledge base…":"Pregunta reconocida. Consultando la base…");
+   ask();
+  }else{
+   setVoiceStatus(lang==="pt"?"Não consegui reconhecer a pergunta. Tente novamente ou digite.":lang==="en"?"I couldn't recognize the question. Try again or type it.":"No pude reconocer la pregunta. Inténtalo de nuevo o escribe.");
+  }
+ };
+ recognition.onerror=event=>{
+  const messages={
+   "not-allowed":{pt:"Permita o uso do microfone nas configurações do navegador e tente novamente.",en:"Allow microphone access in your browser settings, then try again.",es:"Permite el acceso al micrófono en la configuración del navegador e inténtalo de nuevo."},
+   "no-speech":{pt:"Não detectei fala. Tente novamente ou digite a pergunta.",en:"No speech detected. Try again or type your question.",es:"No se detectó voz. Inténtalo de nuevo o escribe tu pregunta."},
+   "network":{pt:"O reconhecimento de voz falhou por um problema de rede. Você pode digitar a pergunta.",en:"Speech recognition failed because of a network issue. You can type your question.",es:"El reconocimiento de voz falló por un problema de red. Puedes escribir la pregunta."}
+  };
+  setVoiceStatus((messages[event.error]&&messages[event.error][lang])||(lang==="pt"?"Não foi possível reconhecer a voz. Você pode digitar a pergunta.":lang==="en"?"Could not recognize speech. You can type your question.":"No se pudo reconocer la voz. Puedes escribir la pregunta."));
+ };
+ recognition.onend=()=>{
+  activeRecognition=null;
+  if(button)button.setAttribute("aria-pressed","false");
+ };
+ try{recognition.start()}catch(e){
+  activeRecognition=null;
+  if(button)button.setAttribute("aria-pressed","false");
+  setVoiceStatus(lang==="pt"?"Não foi possível iniciar o microfone. Tente novamente ou digite.":lang==="en"?"Could not start the microphone. Try again or type.":"No se pudo iniciar el micrófono. Inténtalo de nuevo o escribe.");
+ }
+}
 
 function bindActions(){
  document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
  document.querySelectorAll("[data-action='resetMode']").forEach(b=>b.addEventListener("click",resetMode));
  document.querySelectorAll("[data-action='ask']").forEach(b=>b.addEventListener("click",ask));
  document.querySelectorAll("[data-action='speakAnswer']").forEach(b=>b.addEventListener("click",speakAnswer));
+ document.querySelectorAll("[data-action='startVoiceInput']").forEach(b=>b.addEventListener("click",startVoiceInput));
 }
 
 let profileData={perspectives:{}};
@@ -97,7 +168,19 @@ function renderModesFallback(){
 function init(){
  bindActions();
  document.getElementById("qFloat").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
- document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("ask").classList.toggle("minimized"));
+ const chat=document.getElementById("ask");
+ const minimizeButton=document.getElementById("minimizeChat");
+ const restoreButton=document.getElementById("restoreChat");
+ minimizeButton.addEventListener("click",()=>{
+  chat.classList.add("minimized");
+  minimizeButton.setAttribute("aria-expanded","false");
+  restoreButton.focus();
+ });
+ restoreButton.addEventListener("click",()=>{
+  chat.classList.remove("minimized");
+  minimizeButton.setAttribute("aria-expanded","true");
+  document.getElementById("qFloat").focus();
+ });
  Promise.all([loadProfile(),loadKnowledge()]).then(()=>{setLang("pt");renderProof();});
 }
 init();
