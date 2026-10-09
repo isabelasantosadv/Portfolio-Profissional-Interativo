@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Canonical working record for reconciling public academic profiles. This file is a review workspace, not proof that external platforms have been updated.",
+  "identity": {
+    "preferredPublicName": "Isabela Schattgen",
+    "fullNameOnIDPDissertationRecord": "Isabela Maria Ferreira dos Santos",
+    "nameReconciliation": "Confirm preferred publication-name policy before editing any external record; preserve author names exactly as printed on each publication."
+  },
+  "profiles": {
+    "orcid": {
+      "url": "https://orcid.org/0009-0002-2062-1915",
+      "id": "0009-0002-2062-1915",
+      "status": "review_required",
+      "verifiedPublicLinksObserved": [
+        "http://lattes.cnpq.br/9267824305716826",
+        "https://www.linkedin.com/in/isabelamfsantos",
+        "https://www.instagram.com/isabelasantosadv_/"
+      ],
+      "notes": "Automated page retrieval may expose a sandbox/test representation. Recheck the live official ORCID record in a normal browser before making edits."
+    },
+    "webOfScience": {
+      "url": "https://www.webofscience.com/wos/author/record/OGN-8088-2025",
+      "researcherId": "OGN-8088-2025",
+      "status": "audit_incomplete",
+      "notes": "The accessible public view did not expose enough publication or metric data to reconcile the record."
+    },
+    "googleScholar": {
+      "url": "https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=pt-BR",
+      "userId": "PnHzrMcAAAAJ",
+      "status": "review_required",
+      "publicProfileNameObserved": "Isabela Schattgen",
+      "publicAffiliationObserved": "Pesquisadora, B2Law",
+      "verifiedEmailDomainObserved": "guilhermedeoliveira.com.br",
+      "visibleWork": {
+        "title": "Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação",
+        "year": 2022
+      },
+      "notes": "Google Scholar returned an error while loading metrics. Confirm current affiliation, publication completeness, and duplicate records after signing in."
+    },
+    "lattes": {
+      "url": "http://lattes.cnpq.br/9267824305716826",
+      "id": "9267824305716826",
+      "status": "audit_incomplete",
+      "notes": "Automated retrieval stopped at a security-code page. Obtain an export or inspect the profile manually."
+    }
+  },
+  "publications": [
+    {
+      "title": "Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação",
+      "authorAsListedByRepository": "Santos, Isabela Maria Ferreira dos",
+      "year": 2022,
+      "type": "Dissertação de mestrado",
+      "institution": "Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP)",
+      "programAsListed": "Mestrado Acadêmico em Direito",
+      "supervisor": "Ricardo Morishita Wada",
+      "repositoryUrl": "https://repositorio.idp.edu.br/handle/123456789/3885?mode=full",
+      "stableRepositoryUri": "https://repositorio.idp.edu.br/handle/123456789/3885",
+      "openAccess": true,
+      "doi": null,
+      "doiStatus": "not_confirmed",
+      "abstractSummary": "Estudo sobre desafios jurídicos de startups em estágio inicial e sistematização de instrumentos de assessoria jurídica empresarial em uma abordagem de Advocacia 4.0.",
+      "crossPlatformCheck": {
+        "googleScholar": "matching-title-and-year-visible; exact metadata and citation linkage still need review",
+        "orcid": "not verified",
+        "webOfScience": "not verified",
+        "lattes": "not verified"
+      }
+    }
+  ],
+  "biographyDraftPtBR": "Advogada e consultora com atuação interdisciplinar em Direito, tecnologia, negócios digitais, governança e inovação. Sua experiência integra assessoria jurídica estratégica, contratos e negócios, governança corporativa, compliance, transformação digital e relacionamento com startups. Desenvolve iniciativas na interseção entre inteligência artificial, operações jurídicas e gestão do conhecimento, com interesse em governança de IA, regulação de tecnologias digitais e inovação responsável. É autora da dissertação Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação (IDP, 2022).",
+  "doNotPublishWithoutConfirmation": [
+    "Current academic degree names and formal program titles",
+    "Current academic or professional affiliations",
+    "Citation counts, h-index, and other platform metrics",
+    "DOIs or publication identifiers not confirmed by an authoritative source",
+    "Publications not supported by a publisher, institutional repository, DOI registry, or full-text record"
+  ],
+  "nextActions": [
+    "Export or review the full Lattes CV and compare education, employment, projects, and publications.",
+    "Export Web of Science author publications and metrics, where available.",
+    "Review the full Google Scholar works list; verify duplicates and publication metadata.",
+    "Review the official ORCID record sections for works, education, and employment.",
+    "Resolve name variants and degree nomenclature against primary documents.",
+    "Prepare platform-specific edits only after source records have been reconciled.",
+    "After authenticated edits, re-open each public profile and record verification date."
+  ],
+  "lastAudited": "2026-10-09",
+  "auditStatus": "initial_public_web_audit_only"
+}
