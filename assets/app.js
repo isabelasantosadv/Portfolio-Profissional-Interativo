@@ -18,8 +18,53 @@ function setMode(k){const d=profileData.perspectives[k],m=modes[k];document.getE
 function resetMode(){document.getElementById("context").classList.remove("active");document.getElementById("profile").scrollIntoView({behavior:"smooth"})}
 async function renderProof(){try{const r=await fetch("./data/evidence.json");if(!r.ok)throw new Error("evidence data unavailable");const d=await r.json();document.getElementById("proof").innerHTML=d.items.map(x=>'<button class="card evidenceCard" type="button" data-evidence="'+x.id+'"><div class="role">'+x.title[lang]+'</div><div class="desc">'+x.description[lang]+'</div><span class="pill">Explorar evidência →</span></button>').join("");document.querySelectorAll("[data-evidence]").forEach(b=>b.addEventListener("click",()=>showEvidence(b.dataset.evidence,d.items)))}catch(e){document.getElementById("proof").innerHTML=T[lang].proof.map((x,i)=>'<button class="card evidenceCard" type="button" data-evidence-fallback="'+i+'"><div class="role">'+x[0]+'</div><div class="desc">'+x[1]+'</div><span class="pill">Explorar →</span></button>').join("")}} 
 function showEvidence(id,items){const x=items.find(i=>i.id===id);if(!x)return;const detail=document.getElementById("evidenceDetail");detail.innerHTML='<div class="detailKicker">Evidence explorer</div><h3>'+x.title[lang]+'</h3><p>'+x.description[lang]+'</p><div class="detailActions"><a href="#trajectory">Ver trajetória relacionada →</a><a href="#ask">Perguntar sobre este tema →</a></div>';detail.classList.add("active");detail.scrollIntoView({behavior:"smooth",block:"nearest"})}
-const qa=[[/contrat|deal|negoci|parcer/i,{pt:"Minha experiência jurídica é fortemente orientada a negócios: contratos, negociação, parcerias, fornecedores e estruturação de operações.",en:"My legal experience is strongly business-oriented: contracts, negotiation, partnerships, vendors and transaction structuring.",es:"Mi experiencia jurídica está fuertemente orientada a negocios: contratos, negociación, alianzas, proveedores y estructuración de operaciones."}],[/open finance|banco|fintech|regula|pagamento|pix/i,{pt:"Tenho experiência no Sistema Financeiro e no Banco do Brasil em negócios digitais, governança, inovação e Open Finance.",en:"I have financial-sector experience, including work at Banco do Brasil across digital business, governance, innovation and Open Finance.",es:"Tengo experiencia en el sector financiero, incluyendo trabajo en Banco do Brasil en negocios digitales, gobierno corporativo, innovación y Open Finance."}],[/startup|founder|empreendedor/i,{pt:"Minha experiência com startups combina assessoria jurídica, governança, negócios e ecossistema. Também atuo por meio da Go Digital e da Black Tech Lawyers.",en:"My startup experience combines legal advisory, governance, business and ecosystem work, including Go Digital and Black Tech Lawyers.",es:"Mi experiencia con startups combina asesoramiento jurídico, gobierno corporativo, negocios y ecosistema, incluyendo Go Digital y Black Tech Lawyers."}],[/ia|inteligência artificial|artificial intelligence|algoritm/i,{pt:"Minha atuação em IA combina pesquisa, ensino e experiência prática em tecnologia, ética, privacidade e governança.",en:"My AI work combines research, teaching and practical experience in technology, ethics, privacy and governance.",es:"Mi trabajo en IA combina investigación, docencia y experiencia práctica en tecnología, ética, privacidad y gobernanza."}],[/board|conselh|advisor/i,{pt:"Para advisory, combino Direito, negócios, tecnologia, regulação e governança para apoiar decisões complexas.",en:"For advisory work, I combine law, business, technology, regulation and governance to support complex decisions.",es:"Para advisory, combino Derecho, negocios, tecnología, regulación y gobernanza para apoyar decisiones complejas."}],[/pesquis|doutor|acadêm|professor|research/i,{pt:"Minha trajetória acadêmica inclui mestrado em Direito, especialização em Plataformas Digitais pelo MIT e doutorado em Comunicação na PUC-SP, atualmente trancado.",en:"My academic background includes a Master's in Law, an MIT specialization in Digital Platforms and doctoral studies in Communication at PUC-SP, currently on hold.",es:"Mi trayectoria académica incluye un Máster en Derecho, una especialización del MIT en Plataformas Digitales y estudios doctorales en Comunicación en PUC-SP, actualmente suspendidos."}],[/govern|compliance|risco|grc/i,{pt:"Tenho experiência em governança, auditoria, gestão de riscos e compliance, inclusive em tecnologia e negócios digitais.",en:"I have experience in governance, audit, risk management and compliance, including in technology and digital business.",es:"Tengo experiencia en gobierno corporativo, auditoría, gestión de riesgos y compliance, incluso en tecnología y negocios digitales."}]];
-function ask(){const input=document.getElementById("qFloat");const q=input.value.trim();if(!q)return;const hit=qa.find(x=>x[0].test(q));document.getElementById("answerFloat").textContent=hit?hit[1][lang]:T[lang].answer;input.value=""}
+let knowledgeQA=[];
+const normalizedText=value=>String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+async function loadKnowledge(){
+ try{
+  const r=await fetch("./data/knowledge/qa.json");
+  if(!r.ok)throw new Error("knowledge corpus unavailable");
+  const data=await r.json();
+  if(!Array.isArray(data.entries))throw new Error("knowledge corpus has invalid shape");
+  knowledgeQA=data.entries;
+ }catch(e){console.warn("Ask Isabela knowledge corpus could not be loaded; using safe fallback.",e)}
+}
+function findKnowledgeAnswer(question){
+ const q=normalizedText(question);
+ if(!q)return null;
+ const qTokens=new Set(q.split(" "));
+ let best=null,bestScore=0;
+ for(const entry of knowledgeQA){
+  let score=0;
+  for(const rawKeyword of entry.keywords||[]){
+   const keyword=normalizedText(rawKeyword);
+   if(!keyword)continue;
+   if(keyword.includes(" ")){if((" "+q+" ").includes(" "+keyword+" "))score+=3+keyword.split(" ").length;}
+   else if(qTokens.has(keyword))score+=1;
+  }
+  if(score>bestScore){best=entry;bestScore=score}
+ }
+ return bestScore>0?best:null;
+}
+async function ask(){
+ const input=document.getElementById("qFloat");
+ const q=input.value.trim();if(!q)return;
+ const answerEl=document.getElementById("answerFloat");
+ answerEl.textContent=lang==="pt"?"Consultando a base do portfólio…":lang==="en"?"Checking the portfolio knowledge base…":"Consultando la base del portafolio…";
+ input.value="";
+ if(!knowledgeQA.length)await loadKnowledge();
+ const hit=findKnowledgeAnswer(q);
+ const entry=hit&&hit.answers?hit.answers[lang]:null;
+ const fallback={
+  pt:"Não encontrei informação suficiente na base pública do portfólio para responder com segurança. Você pode explorar as seções de trajetória e evidências ou entrar em contato com Isabela.",
+  en:"The public portfolio knowledge base does not contain enough information to answer confidently. You can explore the trajectory and evidence sections or contact Isabela.",
+  es:"La base pública del portafolio no contiene información suficiente para responder con seguridad. Puedes consultar las secciones de trayectoria y evidencias o contactar con Isabela."
+ };
+ answerEl.textContent=entry||fallback[lang]||fallback.pt;
+ if(hit&&hit.sources&&hit.sources.length){
+  answerEl.dataset.sources=hit.sources.join(",");
+ }else{delete answerEl.dataset.sources}
+}
 function speakAnswer(){if("speechSynthesis" in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(document.getElementById("answerFloat").textContent);u.lang=lang==="pt"?"pt-BR":lang==="en"?"en-US":"es-ES";u.rate=.98;speechSynthesis.speak(u)}}
 
 function bindActions(){
