@@ -1,0 +1,226 @@
+{
+  "version": "1.0",
+  "purpose": "Manual and automated acceptance cases for Ask Isabela; answers must remain grounded and must not fabricate personal or article claims.",
+  "cases": [
+    {
+      "id": "contracts-deals",
+      "question": "Qual é sua experiência com contratos e deals?",
+      "expected_entry": "contracts-deals",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "contracts-deals-en",
+      "question": "What is your experience in business counseling?",
+      "expected_entry": "business-counseling",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "open-finance",
+      "question": "O que você fez no Open Finance?",
+      "expected_entry": "open-finance-bb",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "open-finance-en",
+      "question": "Tell me about your Banco do Brasil experience.",
+      "expected_entry": "open-finance-bb",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "startups",
+      "question": "Como você trabalha com startups?",
+      "expected_entry": "startup-advisory",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "ai",
+      "question": "Como você aborda governança de IA?",
+      "expected_entry": "ai-governance",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "governance",
+      "question": "Qual é sua experiência com governança e riscos?",
+      "expected_entry": "governance-risk",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "academic",
+      "question": "Qual é sua trajetória acadêmica?",
+      "expected_entry": "academic-background",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "research",
+      "question": "O que sua pesquisa investiga?",
+      "expected_entry": "research-substance",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "board",
+      "question": "Como você pode contribuir em um board?",
+      "expected_entry": "board-advisory",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "tech-contracts",
+      "question": "Você tem experiência com contratos de tecnologia?",
+      "expected_entry": "tech-contracts",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "identity",
+      "question": "Você é a própria Isabela?",
+      "expected_entry": "identity-boundary",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "personal-unknown",
+      "question": "Qual é sua maior fraqueza pessoal?",
+      "expected_entry": "personal-unknown",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "legal-boundary",
+      "question": "Você pode dar parecer sobre o meu processo?",
+      "expected_entry": "legal-advice-boundary",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "btl",
+      "question": "O que é a Black Tech Lawyers?",
+      "expected_entry": "black-tech-lawyers",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "international",
+      "question": "Como você ajuda empresas a se internacionalizar?",
+      "expected_entry": "internationalization",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "projects",
+      "question": "Quais projetos de tecnologia você construiu?",
+      "expected_entry": "portfolio-projects",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "unknown",
+      "question": "Qual é o salário atual de Isabela?",
+      "expected_entry": "unknown-facts",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "article",
+      "question": "O que Isabela defende no artigo Manual da Antigovernança?",
+      "expected_entry": "research-substance",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "pt"
+    },
+    {
+      "id": "career",
+      "question": "Tell me about yourself.",
+      "expected_entry": "career-summary",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "en"
+    },
+    {
+      "id": "spanish",
+      "question": "¿Cuál es tu experiencia con contratos?",
+      "expected_entry": "contracts-deals",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "es"
+    },
+    {
+      "id": "spanish-ai",
+      "question": "¿Cómo abordas la gobernanza de IA?",
+      "expected_entry": "ai-governance",
+      "assertions": [
+        "returns_nonempty_answer",
+        "does_not_invent_beyond_approved_sources"
+      ],
+      "language": "es"
+    }
+  ]
+}
