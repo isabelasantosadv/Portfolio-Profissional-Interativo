@@ -14,7 +14,7 @@
     },
     {
       "id": "contracts-deals-en",
-      "question": "What is your experience in business counseling?",
+      "question": "What does business counseling mean in your work?",
       "expected_entry": "business-counseling",
       "assertions": [
         "returns_nonempty_answer",
