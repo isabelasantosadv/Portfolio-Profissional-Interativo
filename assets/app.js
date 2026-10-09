@@ -97,7 +97,7 @@ function renderModesFallback(){
 function init(){
  bindActions();
  document.getElementById("qFloat").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
- document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("floatingChat").classList.toggle("minimized"));
+ document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("ask").classList.toggle("minimized"));
  Promise.all([loadProfile(),loadKnowledge()]).then(()=>{setLang("pt");renderProof();});
 }
 init();
