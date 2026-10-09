@@ -61,6 +61,7 @@ async function ask(){
   es:"La base pública del portafolio no contiene información suficiente para responder con seguridad. Puedes consultar las secciones de trayectoria y evidencias o contactar con Isabela."
  };
  answerEl.textContent=entry||fallback[lang]||fallback.pt;
+ setVoiceStatus("");
  if(hit&&hit.sources&&hit.sources.length){
   answerEl.dataset.sources=hit.sources.join(",");
  }else{delete answerEl.dataset.sources}
