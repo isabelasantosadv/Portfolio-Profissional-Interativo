@@ -45,3 +45,19 @@ The desired conversational identity is professional, intelligent, warm and human
 - Distinguish documented facts from interpretation.
 - When the knowledge base is insufficient, say so.
 - Ask Isabela is an AI representation, not a claim that the visitor is speaking directly with Isabela.
+
+
+## Runtime behavior
+
+- `qa.json` is the curated multilingual response corpus currently loaded by the static portfolio.
+- `conversation-tests.json` contains acceptance cases for matching, language coverage, identity boundaries and unsupported facts.
+- The browser app uses keyword/phrase matching and returns a prewritten answer. This is a grounded first version, **not** a generative AI service.
+- Each answer entry records source IDs so its factual basis can be audited. If no intent matches, the assistant returns a safe fallback.
+- Text input and browser speech synthesis remain available. No microphone access or always-on listening has been enabled.
+- The voice profile is editorial guidance for answer style. It does not create new facts or replace source verification.
+
+## Verification and remaining work
+
+The first acceptance pass covers 22 questions across Portuguese, English and Spanish. It checks the intended answer category and that sensitive or undocumented information is not fabricated. The corpus is still limited to documented portfolio facts and editorially prepared answers.
+
+The three listed LinkedIn articles remain `index_only`: the system must not state their specific arguments as facts until approved article text or reliable excerpts have been added. Generative responses, voice input, source links in the visible answer, and end-to-end browser checks are separate follow-up stages.
