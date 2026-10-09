@@ -1,0 +1,425 @@
+{
+  "version": "1.0",
+  "purpose": "Grounded, multilingual answers for the public Ask Isabela portfolio assistant. This is a curated first version, not a generative AI model.",
+  "fallback": {
+    "pt": "Não encontrei informação suficiente na base pública do portfólio para responder com segurança. Você pode explorar as seções de trajetória e evidências ou entrar em contato com Isabela.",
+    "en": "The public portfolio knowledge base does not contain enough information to answer confidently. You can explore the trajectory and evidence sections or contact Isabela.",
+    "es": "La base pública del portafolio no contiene información suficiente para responder con seguridad. Puedes consultar las secciones de trayectoria y evidencias o contactar con Isabela."
+  },
+  "entries": [
+    {
+      "id": "contracts-deals",
+      "keywords": [
+        "contrato",
+        "contratos",
+        "deal",
+        "deals",
+        "negociação",
+        "negociacao",
+        "parceria",
+        "parcerias",
+        "fornecedor",
+        "fornecedores",
+        "business counseling",
+        "transaction",
+        "commercial"
+      ],
+      "sources": [
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "Minha atuação jurídica é orientada ao negócio: contratos, negociação, parcerias, fornecedores e estruturação de relações comerciais. A proposta é ajudar a identificar riscos e alternativas que façam sentido para a operação, e não tratar o jurídico como uma etapa isolada da decisão.",
+        "en": "My legal work is business-oriented: contracts, negotiation, partnerships, vendors and the structuring of commercial relationships. The aim is to identify risks and practical options for the operation, rather than treating legal review as a step isolated from the business decision.",
+        "es": "Mi trabajo jurídico está orientado al negocio: contratos, negociación, alianzas, proveedores y estructuración de relaciones comerciales. El objetivo es identificar riesgos y alternativas prácticas, sin aislar la revisión jurídica de la decisión empresarial."
+      }
+    },
+    {
+      "id": "open-finance-bb",
+      "keywords": [
+        "open finance",
+        "banco do brasil",
+        "bb",
+        "banco",
+        "fintech",
+        "sistema financeiro",
+        "pagamento",
+        "pix"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "No Banco do Brasil, atuei em áreas ligadas a negócios digitais, governança, inovação, relacionamento com startups e Open Finance. Minha experiência combina a dimensão jurídica e regulatória com a execução de projetos e a realidade de negócios digitais.",
+        "en": "At Banco do Brasil, I worked in areas connected to digital business, governance, innovation, startup relations and Open Finance. My experience connects legal and regulatory considerations with project execution and the realities of digital business.",
+        "es": "En Banco do Brasil, trabajé en áreas vinculadas a negocios digitales, gobierno corporativo, innovación, relación con startups y Open Finance. Mi experiencia conecta la dimensión jurídica y regulatoria con la ejecución de proyectos y la realidad de los negocios digitales."
+      }
+    },
+    {
+      "id": "startup-advisory",
+      "keywords": [
+        "startup",
+        "startups",
+        "founder",
+        "founders",
+        "fundador",
+        "fundadores",
+        "empreendedor",
+        "empreendedorismo",
+        "go digital",
+        "black tech lawyers"
+      ],
+      "sources": [
+        "portfolio-evidence",
+        "portfolio-profile"
+      ],
+      "answers": {
+        "pt": "Minha experiência com startups combina assessoria jurídica, governança, negócios digitais e relacionamento com o ecossistema de inovação. Também sou cofundadora da Black Tech Lawyers e desenvolvo iniciativas pela Go Digital.",
+        "en": "My startup experience combines legal advisory, governance, digital business and engagement with the innovation ecosystem. I am also a co-founder of Black Tech Lawyers and develop initiatives through Go Digital.",
+        "es": "Mi experiencia con startups combina asesoramiento jurídico, gobierno corporativo, negocios digitales y relación con el ecosistema de innovación. También soy cofundadora de Black Tech Lawyers y desarrollo iniciativas a través de Go Digital."
+      }
+    },
+    {
+      "id": "ai-governance",
+      "keywords": [
+        "ia",
+        "inteligência artificial",
+        "inteligencia artificial",
+        "artificial intelligence",
+        "ai governance",
+        "governança de ia",
+        "governanza de ia",
+        "algoritmo",
+        "algoritmos"
+      ],
+      "sources": [
+        "portfolio-evidence",
+        "portfolio-profile"
+      ],
+      "answers": {
+        "pt": "Meu trabalho relacionado à inteligência artificial se conecta a governança, ética, explicabilidade, privacidade e proteção de dados. O foco é aproximar essas questões da prática organizacional: responsabilidades, riscos e critérios para decisões tecnológicas.",
+        "en": "My work related to artificial intelligence connects governance, ethics, explainability, privacy and data protection. The focus is to bring these questions into organizational practice: responsibilities, risks and criteria for technology decisions.",
+        "es": "Mi trabajo relacionado con la inteligencia artificial conecta gobernanza, ética, explicabilidad, privacidad y protección de datos. El objetivo es llevar estas cuestiones a la práctica organizativa: responsabilidades, riesgos y criterios para decisiones tecnológicas."
+      }
+    },
+    {
+      "id": "business-counseling",
+      "keywords": [
+        "business counseling",
+        "aconselhamento empresarial",
+        "aconselhamento de negócios",
+        "conselho",
+        "decisão de negócio",
+        "decisao de negocio",
+        "decisão estratégica",
+        "decisao estrategica",
+        "executivo"
+      ],
+      "sources": [
+        "portfolio-evidence",
+        "portfolio-profile"
+      ],
+      "answers": {
+        "pt": "Business counseling, para mim, significa participar da formulação da decisão: compreender o objetivo comercial, mapear riscos jurídicos e regulatórios, comparar alternativas e ajudar a estruturar uma solução executável. É uma abordagem coerente com minha trajetória entre Direito, Administração, tecnologia e negócios.",
+        "en": "Business counseling means contributing to the decision itself: understanding the commercial objective, mapping legal and regulatory risks, comparing alternatives and helping structure an executable solution. It fits my background across law, business administration, technology and business.",
+        "es": "Business counseling significa contribuir a la propia decisión: comprender el objetivo comercial, identificar riesgos jurídicos y regulatorios, comparar alternativas y ayudar a estructurar una solución viable. Encaja con mi trayectoria entre Derecho, Administración, tecnología y negocios."
+      }
+    },
+    {
+      "id": "governance-risk",
+      "keywords": [
+        "governança",
+        "governanca",
+        "governance",
+        "compliance",
+        "risco",
+        "riscos",
+        "grc",
+        "auditoria",
+        "audit",
+        "antigovernança",
+        "antigovernanca"
+      ],
+      "sources": [
+        "portfolio-evidence",
+        "portfolio-profile"
+      ],
+      "answers": {
+        "pt": "Tenho experiência em governança, auditoria, gestão de riscos e compliance. Minha perspectiva é prática: estruturas de governança precisam ajudar a atribuir responsabilidades, tornar decisões rastreáveis e reduzir riscos que poderiam ser percebidos cedo.",
+        "en": "I have experience in governance, audit, risk management and compliance. My approach is practical: governance structures should clarify accountability, make decisions traceable and help identify risks early.",
+        "es": "Tengo experiencia en gobierno corporativo, auditoría, gestión de riesgos y compliance. Mi enfoque es práctico: las estructuras de gobernanza deben aclarar responsabilidades, permitir la trazabilidad de las decisiones y ayudar a detectar riesgos a tiempo."
+      }
+    },
+    {
+      "id": "academic-background",
+      "keywords": [
+        "mestrado",
+        "master",
+        "master's",
+        "mestrado em direito",
+        "doutorado",
+        "doutorado em comunicação",
+        "doutorado em comunicacao",
+        "phd",
+        "academia",
+        "trajetória acadêmica",
+        "trajetoria academica",
+        "academic background"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "Minha trajetória acadêmica inclui mestrado em Direito, com pesquisa sobre Advocacia 4.0 e Startups, e estudos de doutorado em Comunicação na PUC-SP, atualmente trancados. Também tenho especialização em Plataformas Digitais pelo MIT. Para detalhes bibliográficos e publicações, consulte os links acadêmicos do portfólio.",
+        "en": "My academic background includes a Master's in Law, with research on Legal Practice 4.0 and Startups, and doctoral studies in Communication at PUC-SP, currently on hold. I also completed a specialization in Digital Platforms at MIT. The portfolio links to my academic profiles for bibliographic details.",
+        "es": "Mi trayectoria académica incluye un Máster en Derecho, con investigación sobre Abogacía 4.0 y Startups, y estudios doctorales en Comunicación en la PUC-SP, actualmente suspendidos. También tengo una especialización en Plataformas Digitales del MIT. Los enlaces académicos del portafolio ofrecen más detalles bibliográficos."
+      }
+    },
+    {
+      "id": "research-substance",
+      "keywords": [
+        "pesquisa",
+        "research",
+        "dissertação",
+        "dissertacao",
+        "tese",
+        "publicação",
+        "publicacao",
+        "artigo",
+        "artigos",
+        "publications"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence",
+        "linkedin-articles"
+      ],
+      "answers": {
+        "pt": "A pesquisa documentada no portfólio inclui o tema Advocacia 4.0 e Startups. Há também artigos de opinião registrados na camada de fontes, mas seus textos integrais ainda não foram incorporados à base. Por isso, consigo indicar os temas registrados, mas não devo atribuir a um artigo uma tese específica sem consultar o texto original.",
+        "en": "The research documented in the portfolio includes Legal Practice 4.0 and Startups. Opinion articles are also registered in the source layer, but their full texts have not yet been ingested. I can identify the recorded topics, but should not attribute a specific thesis to an article without consulting the original text.",
+        "es": "La investigación documentada en el portafolio incluye el tema Abogacía 4.0 y Startups. También hay artículos de opinión registrados en la capa de fuentes, pero sus textos completos aún no se han incorporado. Puedo indicar los temas registrados, pero no atribuir una tesis concreta a un artículo sin consultar el texto original."
+      }
+    },
+    {
+      "id": "board-advisory",
+      "keywords": [
+        "board",
+        "board advisory",
+        "conselho consultivo",
+        "conselheira",
+        "conselheiro",
+        "advisory",
+        "conselhos",
+        "conselho de administração"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "Para advisory, reúno perspectivas de Direito, negócios, tecnologia, regulação e governança para apoiar decisões complexas. O escopo concreto depende do desafio, da organização e das responsabilidades acordadas.",
+        "en": "For advisory work, I bring together law, business, technology, regulation and governance perspectives to support complex decisions. The specific scope depends on the challenge, organization and agreed responsibilities.",
+        "es": "En advisory, integro perspectivas de Derecho, negocios, tecnología, regulación y gobernanza para apoyar decisiones complejas. El alcance concreto depende del desafío, la organización y las responsabilidades acordadas."
+      }
+    },
+    {
+      "id": "tech-contracts",
+      "keywords": [
+        "contrato de tecnologia",
+        "contratos de tecnologia",
+        "saas",
+        "api",
+        "cloud",
+        "software",
+        "fornecedor de tecnologia",
+        "technology contracts"
+      ],
+      "sources": [
+        "portfolio-evidence",
+        "portfolio-profile"
+      ],
+      "answers": {
+        "pt": "O portfólio registra atuação em contratos corporativos, fornecedores, parcerias e negócios de tecnologia. Em um contrato tecnológico, a análise costuma precisar conectar escopo e níveis de serviço a dados, propriedade intelectual, segurança, responsabilidades, continuidade e saída — ajustando a profundidade ao negócio concreto.",
+        "en": "The portfolio documents corporate contracts, vendors, partnerships and technology business. A technology contract review often needs to connect scope and service levels with data, intellectual property, security, liability, continuity and exit rights, calibrated to the actual business.",
+        "es": "El portafolio documenta experiencia en contratos corporativos, proveedores, alianzas y negocios tecnológicos. La revisión de un contrato tecnológico suele conectar alcance y niveles de servicio con datos, propiedad intelectual, seguridad, responsabilidad, continuidad y salida, según el negocio concreto."
+      }
+    },
+    {
+      "id": "career-summary",
+      "keywords": [
+        "quem é isabela",
+        "quem é você",
+        "sobre você",
+        "tell me about yourself",
+        "who are you",
+        "perfil",
+        "trajetória",
+        "trajetoria",
+        "career",
+        "background"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "Sou advogada de negócios e tecnologia, com atuação na interseção entre contratos, negócios digitais, regulação e governança. Minha trajetória passa pelo setor financeiro, Open Finance, startups, pesquisa e iniciativas de educação e tecnologia. Procuro transformar complexidade jurídica e tecnológica em decisões mais claras e executáveis.",
+        "en": "I am a business and technology lawyer working across contracts, digital business, regulation and governance. My background spans financial services, Open Finance, startups, research, and education and technology initiatives. I aim to turn legal and technological complexity into clearer, executable decisions.",
+        "es": "Soy abogada de negocios y tecnología, con trabajo en la intersección entre contratos, negocios digitales, regulación y gobernanza. Mi trayectoria incluye servicios financieros, Open Finance, startups, investigación e iniciativas de educación y tecnología. Busco convertir la complejidad jurídica y tecnológica en decisiones más claras y viables."
+      }
+    },
+    {
+      "id": "identity-boundary",
+      "keywords": [
+        "você é a isabela",
+        "voce e a isabela",
+        "are you isabela",
+        "isabela pessoalmente",
+        "falar com isabela",
+        "speak to isabela"
+      ],
+      "sources": [
+        "voice-profile"
+      ],
+      "answers": {
+        "pt": "Sou a representação conversacional de IA do portfólio: uso informações profissionais documentadas e o estilo de comunicação definido para esta experiência. Não sou a própria Isabela e não posso afirmar que ela leu ou aprovou uma mensagem em tempo real.",
+        "en": "I am the portfolio's AI conversational representation, using documented professional information and the communication style defined for this experience. I am not Isabela herself and cannot claim that she has read or approved a message in real time.",
+        "es": "Soy la representación conversacional de IA del portafolio y utilizo información profesional documentada y el estilo de comunicación definido para esta experiencia. No soy la propia Isabela y no puedo afirmar que ella haya leído o aprobado un mensaje en tiempo real."
+      }
+    },
+    {
+      "id": "personal-unknown",
+      "keywords": [
+        "fraqueza",
+        "weakness",
+        "medo",
+        "hobby",
+        "hobbies",
+        "vida pessoal",
+        "personal life",
+        "família",
+        "familia",
+        "family"
+      ],
+      "sources": [
+        "voice-profile"
+      ],
+      "answers": {
+        "pt": "Essa informação pessoal não está documentada na base pública do portfólio, então não vou inventar uma resposta em nome de Isabela. Posso ajudar com informações profissionais que estejam registradas.",
+        "en": "That personal information is not documented in the public portfolio knowledge base, so I won't invent an answer on Isabela's behalf. I can help with professional information that is documented.",
+        "es": "Esa información personal no está documentada en la base pública del portafolio, así que no inventaré una respuesta en nombre de Isabela. Puedo ayudar con información profesional registrada."
+      }
+    },
+    {
+      "id": "legal-advice-boundary",
+      "keywords": [
+        "meu caso",
+        "meu processo",
+        "legal advice",
+        "my case",
+        "consulta jurídica",
+        "consulta juridica",
+        "parecer jurídico",
+        "parecer juridico",
+        "advise me"
+      ],
+      "sources": [
+        "voice-profile"
+      ],
+      "answers": {
+        "pt": "Posso explicar a experiência profissional e os temas jurídicos registrados no portfólio, mas esta conversa pública não substitui uma consulta jurídica individualizada. Para avaliar um caso concreto, seriam necessários contexto, documentos e definição formal do escopo.",
+        "en": "I can explain the professional experience and legal topics documented in the portfolio, but this public conversation is not a substitute for individualized legal advice. Assessing a specific matter would require context, documents and a formally agreed scope.",
+        "es": "Puedo explicar la experiencia profesional y los temas jurídicos registrados en el portafolio, pero esta conversación pública no sustituye una consulta jurídica individualizada. Para evaluar un caso concreto se necesitarían contexto, documentos y un alcance acordado formalmente."
+      }
+    },
+    {
+      "id": "black-tech-lawyers",
+      "keywords": [
+        "black tech lawyers",
+        "btl",
+        "diversidade",
+        "diversity",
+        "inclusão",
+        "inclusao"
+      ],
+      "sources": [
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "Black Tech Lawyers é uma iniciativa da qual sou cofundadora, voltada à ampliação de oportunidades e presença de profissionais negros e outros grupos sub-representados no mercado jurídico e de tecnologia. O escopo e os números institucionais devem ser conferidos nos materiais oficiais mais recentes.",
+        "en": "Black Tech Lawyers is an initiative I co-founded to expand opportunities and representation for Black professionals and other underrepresented groups in the legal and technology markets. Its current scope and institutional figures should be checked against the latest official materials.",
+        "es": "Black Tech Lawyers es una iniciativa que cofundé para ampliar las oportunidades y la representación de profesionales negros y otros grupos infrarrepresentados en los mercados jurídico y tecnológico. Su alcance y cifras actuales deben verificarse en los materiales oficiales más recientes."
+      }
+    },
+    {
+      "id": "internationalization",
+      "keywords": [
+        "internacionalização",
+        "internacionalizacao",
+        "internationalization",
+        "internacional",
+        "europe",
+        "europa",
+        "germany",
+        "alemanha"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "O portfólio registra atuação com empresas de tecnologia em temas corporativos e de internacionalização. A estratégia específica depende do país, do modelo de negócio, da estrutura societária, dos contratos e das exigências regulatórias aplicáveis.",
+        "en": "The portfolio documents corporate work and internationalization topics for technology companies. A specific strategy depends on the country, business model, corporate structure, contracts and applicable regulatory requirements.",
+        "es": "El portafolio documenta trabajo corporativo y temas de internacionalización para empresas tecnológicas. La estrategia concreta depende del país, el modelo de negocio, la estructura societaria, los contratos y los requisitos regulatorios aplicables."
+      }
+    },
+    {
+      "id": "portfolio-projects",
+      "keywords": [
+        "portfólio interativo",
+        "portfolio interativo",
+        "projetos de tecnologia",
+        "projetos digitais",
+        "software",
+        "build",
+        "built",
+        "products"
+      ],
+      "sources": [
+        "portfolio-profile",
+        "portfolio-evidence"
+      ],
+      "answers": {
+        "pt": "O portfólio apresenta meu trabalho na interseção entre Direito, tecnologia e negócios e organiza a trajetória por perspectivas profissionais. Ele não deve ser lido como uma lista completa de todos os produtos ou sistemas em desenvolvimento; para cada projeto, os detalhes precisam ser verificados na documentação correspondente.",
+        "en": "The portfolio presents my work at the intersection of law, technology and business, organizing the trajectory by professional perspective. It is not a complete list of every product or system in development; project-specific details should be verified in the relevant documentation.",
+        "es": "El portafolio presenta mi trabajo en la intersección entre Derecho, tecnología y negocios, organizando la trayectoria por perspectivas profesionales. No es una lista completa de todos los productos o sistemas en desarrollo; los detalles de cada proyecto deben verificarse en su documentación."
+      }
+    },
+    {
+      "id": "unknown-facts",
+      "keywords": [
+        "salário",
+        "salario",
+        "salary",
+        "remuneração",
+        "remuneracao",
+        "idade",
+        "age",
+        "endereço",
+        "endereco",
+        "address",
+        "telefone",
+        "phone"
+      ],
+      "sources": [
+        "voice-profile"
+      ],
+      "answers": {
+        "pt": "Esse dado não está disponível na base pública de conhecimento e não devo deduzi-lo ou inventá-lo. Para informações profissionais, posso responder com base nas fontes documentadas do portfólio.",
+        "en": "That information is not available in the public knowledge base, and I should not infer or invent it. I can answer professional questions using the portfolio's documented sources.",
+        "es": "Ese dato no está disponible en la base pública de conocimiento y no debo deducirlo ni inventarlo. Puedo responder preguntas profesionales basándome en las fuentes documentadas del portafolio."
+      }
+    }
+  ]
+}
