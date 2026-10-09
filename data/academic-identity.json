@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-09",
+  "status": "provisional_source_of_truth",
+  "person": {
+    "display_name": "Isabela Schattgen",
+    "academic_name_as_verified_on_repository_record": "Isabela Maria Ferreira dos Santos",
+    "name_variants_to_reconcile": [
+      "Isabela Santos",
+      "Isabela Schattgen",
+      "Isabela Maria Ferreira dos Santos"
+    ],
+    "note": "Não assumir equivalência automática entre variantes; confirmar cada perfil e obra antes de mesclar."
+  },
+  "identifiers": {
+    "lattes": {
+      "id": "9267824305716826",
+      "url": "http://lattes.cnpq.br/9267824305716826",
+      "verification_status": "id_known_record_not_publicly_verified_in_this_audit"
+    },
+    "orcid": {
+      "id": "0009-0002-2062-1915",
+      "url": "https://orcid.org/0009-0002-2062-1915",
+      "verification_status": "id_known_record_not_publicly_verified_in_this_audit"
+    },
+    "web_of_science": {
+      "researcher_id": "OGN-8088-2025",
+      "url": "https://www.webofscience.com/wos/author/record/OGN-8088-2025",
+      "verification_status": "id_known_record_not_publicly_verified_in_this_audit"
+    },
+    "google_scholar": {
+      "url": null,
+      "verification_status": "profile_url_not_confirmed"
+    },
+    "researchgate": {
+      "url": null,
+      "verification_status": "profile_url_not_confirmed"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/isabelaschattgen/",
+      "verification_status": "public_profile_found"
+    }
+  },
+  "education": [
+    {
+      "title": "Mestrado Acadêmico em Direito Econômico e Desenvolvimento",
+      "institution": "Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP)",
+      "year": 2022,
+      "evidence_url": "https://repositorio.idp.edu.br/handle/123456789/3885",
+      "verification_status": "institutional_repository_record"
+    }
+  ],
+  "works": [
+    {
+      "title": "Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação",
+      "authors_as_published": [
+        "Isabela Maria Ferreira dos Santos"
+      ],
+      "year": 2022,
+      "type": "dissertation",
+      "institution": "Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP)",
+      "location": "Brasília",
+      "extent": "26 f.",
+      "advisor": "Ricardo Morishita Wada",
+      "keywords": [
+        "Startups",
+        "Inovação",
+        "Advocacia 4.0"
+      ],
+      "url": "https://repositorio.idp.edu.br/handle/123456789/3885",
+      "doi": null,
+      "peer_reviewed": null,
+      "evidence_level": "confirmed_in_institutional_repository",
+      "sync_status": "not_checked"
+    }
+  ],
+  "excluded_until_verified": [
+    "DOIs não confirmados",
+    "Artigos científicos não conferidos em fonte primária",
+    "Métricas de citação e h-index",
+    "Afiliações institucionais atuais nas bases acadêmicas",
+    "Perfil individual de Google Scholar",
+    "Perfil individual de ResearchGate"
+  ],
+  "source_of_truth_policy": {
+    "preserve_published_metadata": true,
+    "never_invent_doi_or_citation_metrics": true,
+    "distinguish_scholarly_output_from_opinion_and_professional_content": true,
+    "require_primary_source_or_official_record_for_each_work": true,
+    "keep_original_and_repository_edition_distinct": true
+  }
+}
