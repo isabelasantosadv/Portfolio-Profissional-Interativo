@@ -98,6 +98,6 @@ function init(){
  bindActions();
  document.getElementById("qFloat").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
  document.getElementById("minimizeChat").addEventListener("click",()=>document.getElementById("floatingChat").classList.toggle("minimized"));
- loadProfile().then(()=>{setLang("pt");renderProof();});
+ Promise.all([loadProfile(),loadKnowledge()]).then(()=>{setLang("pt");renderProof();});
 }
 init();
