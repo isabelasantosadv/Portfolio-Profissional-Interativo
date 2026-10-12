@@ -1,58 +1,57 @@
-# Auditoria de identidade acadêmica — 9 de outubro de 2026
+# Auditoria de identidade acadêmica — atualização de 12 de outubro de 2026
 
 ## Estado da execução
 
-Esta é uma auditoria documental inicial baseada em identificadores fornecidos anteriormente, registros públicos indexados e o repositório institucional. **Nenhum perfil externo foi alterado nesta etapa.** Lattes, ORCID e Web of Science exigem autenticação/controle da titular para editar; o acesso público disponível nesta execução não permitiu verificar todos os campos internos.
+A auditoria pública inicial e a revisão do texto integral da dissertação foram concluídas. A camada acadêmica do portfólio foi integrada à branch `main` pelo PR #5. **Nenhum perfil externo foi alterado.** A conclusão da sincronização entre Lattes, ORCID, Web of Science e Google Scholar depende da conferência dos dados atuais e de acesso autenticado às plataformas.
 
-## Atualização de 12 de outubro de 2026\n\n- O identificador do Google Scholar foi recuperado do contexto anterior da usuária: `PnHzrMcAAAAJ`. Link: https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=en. O perfil existe como URL conhecida, mas o conteúdo atual não pôde ser lido/validado pelo acesso público nesta execução.\n- O portfólio agora inclui uma seção acadêmica multilíngue com a dissertação confirmada no IDP e links para Lattes, ORCID, Web of Science e Google Scholar. Isso é uma alteração no repositório do portfólio, não uma alteração nos perfis externos.\n- As páginas ORCID e Google Scholar bloquearam a leitura automatizada; a página do Lattes e do Web of Science também não forneceu dados suficientes para uma conferência independente.\n\n## Identificadores conhecidos
+## Identificadores conhecidos
 
 | Plataforma | Identificador / URL | Estado desta auditoria | Próxima ação |
 |---|---|---|---|
-| Lattes/CNPq | http://lattes.cnpq.br/9267824305716826 | ID conhecido; página não pôde ser lida publicamente nesta execução. Em auditoria anterior, o acesso foi bloqueado por código de segurança. | A titular deve abrir o currículo autenticado, exportar PDF e XML e confirmar a data de atualização. |
-| ORCID | https://orcid.org/0009-0002-2062-1915 | ID conhecido; a página do registro não foi acessível pelo leitor público usado nesta execução. Não foi possível confirmar biografia, atividades ou obras atuais. | Entrar no ORCID, revisar nomes, biografia, afiliações e obras; exportar/compartilhar o registro público ou conceder acesso por fluxo oficial, se disponível. |
-| Web of Science | https://www.webofscience.com/wos/author/record/OGN-8088-2025 | Researcher ID conhecido; página não acessível sem sessão/permissão compatível. | Conferir nome preferido, instituição, publicações, identificador ORCID conectado e opções de sincronização. Não presumir que existam artigos indexados. |
-| Google Scholar | ID `PnHzrMcAAAAJ`; https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=en | URL recuperada do contexto anterior; conteúdo do perfil não pôde ser verificado publicamente nesta execução. | Conferir nome, afiliação, obras, duplicatas e métricas dentro do perfil autenticado. |
-| ResearchGate | URL individual não confirmada | Sem evidência suficiente para associar com segurança um perfil. | Confirmar URL e revisar publicações importadas, duplicatas e afiliação. |
-| LinkedIn | https://www.linkedin.com/in/isabelaschattgen/ | Perfil público encontrado; útil para trajetória profissional, mas não substitui os registros acadêmicos. | Harmonizar título, formação e publicações com dados comprovados, sem transformar artigos de opinião em artigos científicos. |
-| Repositório IDP | https://repositorio.idp.edu.br/handle/123456789/3885 | Registro de dissertação confirmado em fonte institucional. | Reutilizar os metadados do repositório como referência para a entrada de dissertação nas demais bases. |
-| Portfólio | https://isabelasantosadv.github.io/Portfolio-Profissional-Interativo/ | Projeto público; o arquivo `data/profile.json` atualmente contém perspectivas profissionais, mas não uma camada de identidade acadêmica estruturada. | Integrar dados acadêmicos verificados após revisão e aprovação da titular. |
+| Lattes/CNPq | http://lattes.cnpq.br/9267824305716826 | ID conhecido; a leitura automatizada foi interrompida por código de segurança. | Exportar PDF e XML do currículo autenticado. |
+| ORCID | https://orcid.org/0009-0002-2062-1915 | ID conhecido; não foi possível validar de forma independente o registro público atual. | Conferir nome, biografia, afiliações e obras no registro oficial. |
+| Web of Science | https://www.webofscience.com/wos/author/record/OGN-8088-2025 | Researcher ID conhecido; dados públicos insuficientes para reconciliar publicações e métricas. | Conferir o perfil autenticado e exportar a lista de publicações, se houver. |
+| Google Scholar | [PnHzrMcAAAAJ](https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=en) | URL conhecida do contexto anterior; a lista completa, afiliação atual e métricas não foram validadas nesta execução. | Conferir obras, duplicatas, nome, afiliação e métricas no perfil autenticado. |
+| ResearchGate | URL individual não confirmada | Não há evidência suficiente para associar um perfil com segurança. | Confirmar a URL, se houver perfil ativo. |
+| LinkedIn | https://www.linkedin.com/in/isabelaschattgen/ | Perfil público identificado; é fonte de trajetória profissional, não substituto de registro acadêmico. | Harmonizar formação e publicações somente com dados comprovados. |
+| Repositório IDP | https://repositorio.idp.edu.br/handle/123456789/3885 | Registro institucional da dissertação confirmado; o texto integral também foi consultado. | Usar os metadados da obra como referência para as demais plataformas. |
 
-## Registro acadêmico confirmado em fonte institucional
+## Registro acadêmico confirmado
 
-**SANTOS, Isabela Maria Ferreira dos. _Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação_.** 2022. 26 f. Dissertação (Mestrado Acadêmico em Direito) — Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP), Brasília, 2022.
+**SANTOS, Isabela Maria Ferreira dos. _Advocacia 4.0 e startups: instrumentos de assessoramento jurídico no mercado da inovação_.** 2022. 26 f. Dissertação. Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP), Brasília.
 
-- Registro institucional: https://repositorio.idp.edu.br/handle/123456789/3885
-- URI citável do item: https://repositorio.idp.edu.br/handle/123456789/3885
-- Orientador informado no repositório: Ricardo Morishita Wada.
+- [Registro institucional](https://repositorio.idp.edu.br/handle/123456789/3885)
+- [Texto integral da dissertação](https://repositorio.idp.edu.br/bitstream/123456789/3885/1/DISSSERTA%C3%87%C3%83O_%20ISABELA%20MARIA%20FERREIRA%20DOS%20SANTOS%20%20_%20MESTRADO%20ACAD%C3%8AMICO%20EM%20DIREITO.pdf)
+- Orientador indicado no texto: Ricardo Morishita Wada.
+- Coorientador indicado no texto: Marlon Tomazette.
 - Palavras-chave do repositório: Startups; Inovação; Advocacia 4.0.
-- Nota de integridade: manter o título, a forma do nome e a natureza da obra como aparecem no repositório. Não criar DOI nem classificar como artigo de periódico sem evidência.
+- **Distinção importante sobre a formação:** a coleção do repositório é denominada “Mestrado Profissional em Direito Econômico e Desenvolvimento - Brasília”; a folha de rosto descreve o Programa de Pós-Graduação Stricto Sensu em Direito Constitucional do IDP e declara o título de “Mestre em Direito Econômico e Desenvolvimento”. Esses campos não devem ser reduzidos a um único nome presumido.
+- DOI: não confirmado. Não classificar a dissertação como artigo de periódico.
 
-## Achados e decisões de qualidade
+## Regras de integridade
 
-1. **Fonte de verdade ainda incompleta.** Os identificadores foram fornecidos, mas faltam exports atuais de Lattes, ORCID, Web of Science e a lista completa de publicações do Google Scholar.
-2. **Dissertação é o registro acadêmico confirmado nesta etapa.** A existência de outros artigos, capítulos, trabalhos de evento ou DOIs precisa ser conferida individualmente.
-3. **Não misturar produção científica e produção profissional.** Artigos de LinkedIn, posts, palestras, cursos e materiais técnicos devem receber categorias próprias e só devem ser registrados em campos compatíveis com as regras de cada plataforma.
-4. **Sincronização não significa consistência automática.** Quando disponível, a sincronização ORCID–Web of Science deve ser revisada depois de corrigir os metadados de origem; não presumir que atualize Lattes, Scholar ou ResearchGate.
-5. **Não inventar métricas.** Citações, h-index, número de publicações, revisão por pares, DOI e afiliações só entram na fonte-mestra após confirmação na fonte correspondente.
-6. **Nenhuma alteração externa foi realizada.** Esta documentação registra achados e bloqueios; não representa confirmação de edição ou publicação nos perfis.
+1. Não presumir que dados inacessíveis estejam ausentes.
+2. Não inventar DOI, métricas de citação, h-index, afiliações atuais ou obras.
+3. Manter separadas as variantes de nome até confirmar sua correspondência em cada perfil e publicação.
+4. Diferenciar produção científica de posts, artigos de opinião, palestras, cursos e materiais profissionais.
+5. Conferir cada publicação em fonte primária antes de sincronizar os registros.
 
-## Sequência de conclusão
+## Fonte-mestra e documentação
 
-- [ ] Receber o PDF e, preferencialmente, XML exportados do Lattes.
-- [ ] Confirmar a URL pública e exportação/visão atual do ORCID.
-- [ ] Confirmar o perfil Web of Science e exportar a lista de publicações, se houver.
-- [x] Recuperar a URL conhecida do Google Scholar (`PnHzrMcAAAAJ`).\n- [ ] Conferir obras, duplicatas e métricas do Google Scholar no perfil autenticado.
-- [ ] Confirmar se há perfil ResearchGate ativo.
-- [ ] Conferir cada publicação em fonte primária (periódico, repositório, Crossref ou página de evento).
-- [ ] Produzir a matriz canônica com título, tipo, autores, data, DOI/URL, fonte e nível de confiança.
-- [ ] Aplicar as correções nas plataformas autenticadas, registrar data e evidência de cada alteração.
-- [x] Publicar uma camada acadêmica conservadora no portfólio com a dissertação confirmada e links dos identificadores.\n- [ ] Ampliar a produção acadêmica no portfólio somente após validação dos dados.
+- Fonte-mestra provisória: [`data/academic-identity.json`](../data/academic-identity.json).
+- Registro de reconciliação legado, mantido para rastreabilidade: [`data/academic-profile-master-record.json`](../data/academic-profile-master-record.json).
+- Relatório de execução: [`academic-profile-reconciliation.md`](academic-profile-reconciliation.md).
 
-## Fontes consultadas
+## Próximos passos pendentes
 
-- Repositório institucional IDP: https://repositorio.idp.edu.br/handle/123456789/3885
-- Portfólio público e repositório GitHub: https://github.com/isabelasantosadv/Portfolio-Profissional-Interativo
-- Perfil LinkedIn público: https://www.linkedin.com/in/isabelaschattgen/
-- ORCID: https://orcid.org/0009-0002-2062-1915
-- Web of Science: https://www.webofscience.com/wos/author/record/OGN-8088-2025
-- Lattes: http://lattes.cnpq.br/9267824305716826
+- [ ] Receber o PDF e, preferencialmente, XML do Lattes.
+- [ ] Conferir o registro ORCID oficial e suas obras.
+- [ ] Conferir o perfil Web of Science e exportar publicações, se houver.
+- [ ] Conferir obras, duplicatas e métricas no Google Scholar autenticado.
+- [ ] Confirmar eventual perfil ResearchGate.
+- [ ] Reconciliar cada publicação e DOI em fonte primária.
+- [ ] Aplicar alterações nas plataformas autenticadas e registrar evidências de verificação.
+
+## Resultado
+
+**Concluído no GitHub:** camada acadêmica conservadora no portfólio, identificadores conhecidos, registro institucional da dissertação e documentação de auditoria. **Pendente fora do GitHub:** verificar e atualizar os perfis acadêmicos externos. Não há, neste fluxo, conexão autorizada para gravar alterações nessas plataformas.
