@@ -26,7 +26,7 @@ O sistema não cria personas fictícias nem versões diferentes do profissional.
 - Perspectivas orientadas por público
 - Posicionamento de Business Counsel
 - Perspectivas de tecnologia, regulação, governança, advisory e pesquisa
-- Perfil orientado por evidências
+- Perfil orientado por evidências\n- Seção acadêmica com dissertação confirmada e links de identificadores
 - Timeline profissional
 - Camada local de perguntas e respostas
 - Leitura pelo navegador com Web Speech API
