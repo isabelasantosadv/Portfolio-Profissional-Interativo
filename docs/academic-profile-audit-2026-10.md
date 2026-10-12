@@ -4,14 +4,14 @@
 
 Esta é uma auditoria documental inicial baseada em identificadores fornecidos anteriormente, registros públicos indexados e o repositório institucional. **Nenhum perfil externo foi alterado nesta etapa.** Lattes, ORCID e Web of Science exigem autenticação/controle da titular para editar; o acesso público disponível nesta execução não permitiu verificar todos os campos internos.
 
-## Identificadores conhecidos
+## Atualização de 12 de outubro de 2026\n\n- O identificador do Google Scholar foi recuperado do contexto anterior da usuária: `PnHzrMcAAAAJ`. Link: https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=en. O perfil existe como URL conhecida, mas o conteúdo atual não pôde ser lido/validado pelo acesso público nesta execução.\n- O portfólio agora inclui uma seção acadêmica multilíngue com a dissertação confirmada no IDP e links para Lattes, ORCID, Web of Science e Google Scholar. Isso é uma alteração no repositório do portfólio, não uma alteração nos perfis externos.\n- As páginas ORCID e Google Scholar bloquearam a leitura automatizada; a página do Lattes e do Web of Science também não forneceu dados suficientes para uma conferência independente.\n\n## Identificadores conhecidos
 
 | Plataforma | Identificador / URL | Estado desta auditoria | Próxima ação |
 |---|---|---|---|
 | Lattes/CNPq | http://lattes.cnpq.br/9267824305716826 | ID conhecido; página não pôde ser lida publicamente nesta execução. Em auditoria anterior, o acesso foi bloqueado por código de segurança. | A titular deve abrir o currículo autenticado, exportar PDF e XML e confirmar a data de atualização. |
 | ORCID | https://orcid.org/0009-0002-2062-1915 | ID conhecido; a página do registro não foi acessível pelo leitor público usado nesta execução. Não foi possível confirmar biografia, atividades ou obras atuais. | Entrar no ORCID, revisar nomes, biografia, afiliações e obras; exportar/compartilhar o registro público ou conceder acesso por fluxo oficial, se disponível. |
 | Web of Science | https://www.webofscience.com/wos/author/record/OGN-8088-2025 | Researcher ID conhecido; página não acessível sem sessão/permissão compatível. | Conferir nome preferido, instituição, publicações, identificador ORCID conectado e opções de sincronização. Não presumir que existam artigos indexados. |
-| Google Scholar | Perfil individual não confirmado nesta auditoria | Busca pública não identificou com confiança um perfil correspondente aos identificadores fornecidos. | Abrir o perfil correto e enviar a URL pública; revisar duplicatas, afiliação e e-mail institucional. |
+| Google Scholar | ID `PnHzrMcAAAAJ`; https://scholar.google.com/citations?user=PnHzrMcAAAAJ&hl=en | URL recuperada do contexto anterior; conteúdo do perfil não pôde ser verificado publicamente nesta execução. | Conferir nome, afiliação, obras, duplicatas e métricas dentro do perfil autenticado. |
 | ResearchGate | URL individual não confirmada | Sem evidência suficiente para associar com segurança um perfil. | Confirmar URL e revisar publicações importadas, duplicatas e afiliação. |
 | LinkedIn | https://www.linkedin.com/in/isabelaschattgen/ | Perfil público encontrado; útil para trajetória profissional, mas não substitui os registros acadêmicos. | Harmonizar título, formação e publicações com dados comprovados, sem transformar artigos de opinião em artigos científicos. |
 | Repositório IDP | https://repositorio.idp.edu.br/handle/123456789/3885 | Registro de dissertação confirmado em fonte institucional. | Reutilizar os metadados do repositório como referência para a entrada de dissertação nas demais bases. |
@@ -41,12 +41,12 @@ Esta é uma auditoria documental inicial baseada em identificadores fornecidos a
 - [ ] Receber o PDF e, preferencialmente, XML exportados do Lattes.
 - [ ] Confirmar a URL pública e exportação/visão atual do ORCID.
 - [ ] Confirmar o perfil Web of Science e exportar a lista de publicações, se houver.
-- [ ] Confirmar URL do Google Scholar e conferir obras e duplicatas.
+- [x] Recuperar a URL conhecida do Google Scholar (`PnHzrMcAAAAJ`).\n- [ ] Conferir obras, duplicatas e métricas do Google Scholar no perfil autenticado.
 - [ ] Confirmar se há perfil ResearchGate ativo.
 - [ ] Conferir cada publicação em fonte primária (periódico, repositório, Crossref ou página de evento).
 - [ ] Produzir a matriz canônica com título, tipo, autores, data, DOI/URL, fonte e nível de confiança.
 - [ ] Aplicar as correções nas plataformas autenticadas, registrar data e evidência de cada alteração.
-- [ ] Atualizar a camada acadêmica do portfólio somente após validação dos dados.
+- [x] Publicar uma camada acadêmica conservadora no portfólio com a dissertação confirmada e links dos identificadores.\n- [ ] Ampliar a produção acadêmica no portfólio somente após validação dos dados.
 
 ## Fontes consultadas
 
