@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "updated_at": "2026-10-12",
   "status": "provisional_source_of_truth_with_portfolio_academic_layer",
   "person": {
@@ -44,11 +44,14 @@
   },
   "education": [
     {
-      "title": "Mestrado Acadêmico em Direito Econômico e Desenvolvimento",
+      "degree_title_as_supported_by_dissertation_title_page": "Mestre em Direito Econômico e Desenvolvimento",
+      "repository_collection_name": "Mestrado Profissional em Direito Econômico e Desenvolvimento - Brasília",
+      "program_description_on_dissertation_title_page": "Programa de Pós-Graduação Stricto Sensu em Direito Constitucional do IDP",
       "institution": "Instituto Brasileiro de Ensino, Desenvolvimento e Pesquisa (IDP)",
       "year": 2022,
-      "evidence_url": "https://repositorio.idp.edu.br/handle/123456789/3885",
-      "verification_status": "institutional_repository_record"
+      "evidence_url": "https://repositorio.idp.edu.br/bitstream/123456789/3885/1/DISSSERTA%C3%87%C3%83O_%20ISABELA%20MARIA%20FERREIRA%20DOS%20SANTOS%20%20_%20MESTRADO%20ACAD%C3%8AMICO%20EM%20DIREITO.pdf",
+      "repository_record_url": "https://repositorio.idp.edu.br/handle/123456789/3885",
+      "verification_status": "institutional_repository_record_and_dissertation_title_page_reviewed"
     }
   ],
   "works": [
@@ -63,6 +66,7 @@
       "location": "Brasília",
       "extent": "26 f.",
       "advisor": "Ricardo Morishita Wada",
+      "co_advisor": "Marlon Tomazette",
       "keywords": [
         "Startups",
         "Inovação",
@@ -71,11 +75,14 @@
       "url": "https://repositorio.idp.edu.br/handle/123456789/3885",
       "doi": null,
       "peer_reviewed": null,
-      "evidence_level": "confirmed_in_institutional_repository",
-      "sync_status": "not_checked",
-      "program": "Mestrado Profissional em Direito Econômico e Desenvolvimento - Brasília",
+      "evidence_level": "confirmed_in_institutional_repository_and_full_text",
+      "sync_status": "external_profiles_not_checked",
+      "repository_collection_name": "Mestrado Profissional em Direito Econômico e Desenvolvimento - Brasília",
+      "program_description_on_title_page": "Programa de Pós-Graduação Stricto Sensu em Direito Constitucional do IDP",
+      "degree_title_on_title_page": "Mestre em Direito Econômico e Desenvolvimento",
       "abstract_summary": "Estudo sobre desafios jurídicos de startups em estágio inicial e sistematização de instrumentos para assessoramento jurídico de negócios de inovação.",
-      "source_record_url": "https://repositorio.idp.edu.br/handle/123456789/3885"
+      "source_record_url": "https://repositorio.idp.edu.br/handle/123456789/3885",
+      "full_text_url": "https://repositorio.idp.edu.br/bitstream/123456789/3885/1/DISSSERTA%C3%87%C3%83O_%20ISABELA%20MARIA%20FERREIRA%20DOS%20SANTOS%20%20_%20MESTRADO%20ACAD%C3%8AMICO%20EM%20DIREITO.pdf"
     }
   ],
   "excluded_until_verified": [
@@ -83,7 +90,7 @@
     "Artigos científicos não conferidos em fonte primária",
     "Métricas de citação e h-index",
     "Afiliações institucionais atuais nas bases acadêmicas",
-    "Perfil individual de Google Scholar",
+    "Conteúdo completo do perfil individual de Google Scholar",
     "Perfil individual de ResearchGate"
   ],
   "source_of_truth_policy": {
@@ -91,7 +98,8 @@
     "never_invent_doi_or_citation_metrics": true,
     "distinguish_scholarly_output_from_opinion_and_professional_content": true,
     "require_primary_source_or_official_record_for_each_work": true,
-    "keep_original_and_repository_edition_distinct": true
+    "keep_original_and_repository_edition_distinct": true,
+    "do_not_treat_repository_collection_name_as_a_substitute_for_the_degree_title_on_the_dissertation": true
   },
   "last_audit_update": "2026-10-12"
 }
