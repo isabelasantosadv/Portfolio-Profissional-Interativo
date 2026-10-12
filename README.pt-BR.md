@@ -26,7 +26,8 @@ O sistema não cria personas fictícias nem versões diferentes do profissional.
 - Perspectivas orientadas por público
 - Posicionamento de Business Counsel
 - Perspectivas de tecnologia, regulação, governança, advisory e pesquisa
-- Perfil orientado por evidências\n- Seção acadêmica com dissertação confirmada e links de identificadores
+- Perfil orientado por evidências
+- Seção acadêmica com dissertação registrada institucionalmente e links dos identificadores acadêmicos
 - Timeline profissional
 - Camada local de perguntas e respostas
 - Leitura pelo navegador com Web Speech API
@@ -62,9 +63,16 @@ O sistema não cria personas fictícias nem versões diferentes do profissional.
 ├── README.md
 ├── README.pt-BR.md
 ├── README.es.md
+├── docs/
+│   ├── academic-profile-audit-2026-10.md
+│   └── academic-profile-reconciliation.md
 └── data/
-    └── profile.json
+    ├── profile.json
+    ├── evidence.json
+    └── academic-identity.json
 ```
+
+O arquivo legado `data/academic-profile-master-record.json` foi mantido para rastreabilidade e aponta para o registro acadêmico canônico provisório.
 
 ## Use como template
 
