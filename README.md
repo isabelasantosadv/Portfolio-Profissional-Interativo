@@ -27,6 +27,7 @@ It does not create fictional personas or different versions of the professional.
 - Business Counsel positioning
 - Technology, regulation, governance, advisory and research perspectives
 - Evidence-oriented professional profile
+- Academic section with the institutionally recorded dissertation and academic profile links
 - Career timeline
 - Local question-and-answer layer
 - Browser speech output through the Web Speech API
@@ -62,9 +63,16 @@ It does not create fictional personas or different versions of the professional.
 ├── README.md
 ├── README.pt-BR.md
 ├── README.es.md
+├── docs/
+│   ├── academic-profile-audit-2026-10.md
+│   └── academic-profile-reconciliation.md
 └── data/
-    └── profile.json
+    ├── profile.json
+    ├── evidence.json
+    └── academic-identity.json
 ```
+
+The legacy `data/academic-profile-master-record.json` is retained for traceability and points to the provisional canonical academic record.
 
 ## Use it as a template
 
