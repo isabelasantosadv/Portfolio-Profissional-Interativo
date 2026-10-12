@@ -1,0 +1,55 @@
+name: Validate academic profile layer
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate JavaScript syntax
+        run: node --check assets/app.js
+      - name: Validate structured JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('data/academic-identity.json','utf8')); console.log('academic-identity.json: valid JSON')"
+          node -e "JSON.parse(require('fs').readFileSync('data/profile.json','utf8')); console.log('profile.json: valid JSON')"
+          node -e "JSON.parse(require('fs').readFileSync('data/evidence.json','utf8')); console.log('evidence.json: valid JSON')"
+      - name: Verify academic section and identifiers
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync('index.html', 'utf8');
+          const app = fs.readFileSync('assets/app.js', 'utf8');
+          const identity = JSON.parse(fs.readFileSync('data/academic-identity.json', 'utf8'));
+          const requiredHtml = [
+            'id="academic"',
+            'https://repositorio.idp.edu.br/handle/123456789/3885',
+            'https://orcid.org/0009-0002-2062-1915',
+            'https://www.webofscience.com/wos/author/record/OGN-8088-2025',
+            'https://scholar.google.com/citations?user=PnHzrMcAAAAJ'
+          ];
+          for (const token of requiredHtml) {
+            if (!html.includes(token)) throw new Error('Missing expected academic markup/link: ' + token);
+          }
+          for (const token of ['academicTitle:"Produção acadêmica', 'academicTitle:"Academic work', 'academicTitle:"Producción académica']) {
+            if (!app.includes(token)) throw new Error('Missing academic translation: ' + token);
+          }
+          if (identity.identifiers.orcid.id !== '0009-0002-2062-1915') throw new Error('Unexpected ORCID ID');
+          if (identity.identifiers.web_of_science.researcher_id !== 'OGN-8088-2025') throw new Error('Unexpected Web of Science ID');
+          if (identity.identifiers.google_scholar.id !== 'PnHzrMcAAAAJ') throw new Error('Unexpected Google Scholar ID');
+          if (!identity.works.some(w => w.url === 'https://repositorio.idp.edu.br/handle/123456789/3885')) throw new Error('Institutional dissertation record missing');
+          console.log('Academic section, translations, identifiers and institutional record: valid');
+          NODE
