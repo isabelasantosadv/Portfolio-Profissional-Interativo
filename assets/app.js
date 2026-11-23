@@ -69,14 +69,14 @@ async function ask(){
 function voiceLocale(){return lang==="pt"?"pt-BR":lang==="en"?"en-US":"es-ES"}
 function cleanSpeechText(value){
  return String(value||"")
-  .replace(/\\[ROTA:[^\\]]+\\]/gi," ")
-  .replace(/\\[([^\\]]+)\\]\\((?:https?:\\/\\/)?[^)]+\\)/g,"$1")
-  .replace(/https?:\\/\\/\\S+/gi," ")
-  .replace(/\\b(?:https?:\\/\\/)?(?:www\\.)?[\\w-]+\\.(?:com|org|net|io|dev|gov|edu)(?:\\/[^\\s]*)?/gi," ")
-  .replace(/^\\s{0,3}(?:[-•*+]\\s+|\\d+[.)]\\s+)/gm,"")
-  .replace(/^\\s{0,3}#{1,6}\\s*/gm,"")
-  .replace(/[\\*_#`~>]/g,"")
-  .replace(/\\s+/g," ")
+  .replace(/\[ROTA:[^\]]+\]/gi," ")
+  .replace(/\[([^\]]+)\]\([^)]+\)/g,"$1")
+  .replace(/https?:\/\/\S+/gi," ")
+  .replace(/\b(?:www\.)?[\w-]+\.(?:com|org|net|io|dev|gov|edu)(?:\/[^\s]*)?/gi," ")
+  .replace(/^\s{0,3}(?:[-•*+]\s+|\d+[.)]\s+)/gm,"")
+  .replace(/^\s{0,3}#{1,6}\s*/gm,"")
+  .replace(/[*_#\`~>]/g,"")
+  .replace(/\s+/g," ")
   .trim();
 }
 function setVoiceStatus(message){const status=document.getElementById("voiceStatus");if(status)status.textContent=message||""}
