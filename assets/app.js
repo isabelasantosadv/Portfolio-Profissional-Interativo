@@ -91,10 +91,12 @@ function preferredSpeechVoice(voices,locale){
  }
  return regional||matching.find(v=>/female|woman|feminina/i.test(v.name||""))||matching[0]||null;
 }
-function speakAnswer(){
- const text=cleanSpeechText(document.getElementById("answerFloat").textContent);
- if(!text)return;
- if(!("speechSynthesis" in window)){setVoiceStatus(lang==="pt"?"Este navegador não oferece leitura de voz.":lang==="en"?"This browser does not support spoken answers.":"Este navegador no admite respuestas habladas.");return}
+let activeVoiceAudio=null;
+function speakWithBrowser(text){
+ if(!("speechSynthesis" in window)){
+  setVoiceStatus(lang==="pt"?"A voz online está indisponível e este navegador não oferece leitura de voz.":lang==="en"?"Online voice is unavailable and this browser does not support speech.":"La voz en línea no está disponible y este navegador no admite lectura de voz.");
+  return;
+ }
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(text);
  u.lang=voiceLocale();u.rate=.96;u.pitch=1.05;
@@ -103,10 +105,37 @@ function speakAnswer(){
  if(!speechSynthesis.getVoices().length){
   speechSynthesis.addEventListener("voiceschanged",chooseVoice,{once:true});
  }
- u.onstart=()=>setVoiceStatus(lang==="pt"?"Lendo a resposta em voz alta.":lang==="en"?"Reading the answer aloud.":"Leyendo la respuesta en voz alta.");
+ u.onstart=()=>setVoiceStatus(lang==="pt"?"Lendo com a voz alternativa do navegador.":lang==="en"?"Reading with the browser fallback voice.":"Leyendo con la voz alternativa del navegador.");
  u.onend=()=>setVoiceStatus("");
- u.onerror=()=>setVoiceStatus(lang==="pt"?"Não foi possível reproduzir a voz neste navegador.":lang==="en"?"Could not play the voice in this browser.":"No se pudo reproducir la voz en este navegador.");
+ u.onerror=()=>setVoiceStatus(lang==="pt"?"Não foi possível reproduzir a voz neste navegador.":lang==="en"?"Could not play speech in this browser.":"No se pudo reproducir la voz en este navegador.");
  speechSynthesis.speak(u);
+}
+async function speakAnswer(){
+ const text=cleanSpeechText(document.getElementById("answerFloat").textContent);
+ if(!text)return;
+ if(activeVoiceAudio){activeVoiceAudio.pause();activeVoiceAudio=null}
+ if("speechSynthesis" in window)speechSynthesis.cancel();
+ setVoiceStatus(lang==="pt"?"Preparando a voz da Isabela…":lang==="en"?"Preparing Isabela's voice…":"Preparando la voz de Isabela…");
+ try{
+  const response=await fetch("/api/voice",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({text,language:lang})
+  });
+  if(!response.ok)throw new Error("Voice endpoint unavailable");
+  const audioBlob=await response.blob();
+  if(!audioBlob.size)throw new Error("Empty audio response");
+  const audioUrl=URL.createObjectURL(audioBlob);
+  activeVoiceAudio=new Audio(audioUrl);
+  const currentAudio=activeVoiceAudio;
+  currentAudio.onended=()=>{URL.revokeObjectURL(audioUrl);if(activeVoiceAudio===currentAudio)activeVoiceAudio=null;setVoiceStatus("")};
+  currentAudio.onerror=()=>{URL.revokeObjectURL(audioUrl);if(activeVoiceAudio===currentAudio)activeVoiceAudio=null;setVoiceStatus(lang==="pt"?"Falha ao reproduzir o áudio.":lang==="en"?"Audio playback failed.":"Error al reproducir el audio.")};
+  await currentAudio.play();
+  setVoiceStatus(lang==="pt"?"Reproduzindo voz gerada pela ElevenLabs.":lang==="en"?"Playing ElevenLabs voice.":"Reproduciendo voz de ElevenLabs.");
+ }catch(error){
+  if(activeVoiceAudio){activeVoiceAudio=null}
+  speakWithBrowser(text);
+ }
 }
 let activeRecognition=null;
 function startVoiceInput(){
