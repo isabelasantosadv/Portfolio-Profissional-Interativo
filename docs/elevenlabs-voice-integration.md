@@ -39,20 +39,19 @@ If a future conversational model generates spoken answers, its speech-specific r
 
 A static GitHub Pages website cannot safely keep an ElevenLabs API key secret. Do not call ElevenLabs directly from browser JavaScript and do not commit an API key to GitHub.
 
-The production integration needs a small server-side proxy, for example a Supabase Edge Function or another serverless endpoint:
+The production integration uses a Vercel Serverless Function at `api/voice.js`, deployed with this repository. The browser sends only the text and language to `/api/voice`; the server calls ElevenLabs. The API key and Voice ID stay in Vercel Environment Variables:
 
-1. Store the API key as a server-side secret (for Supabase, use the project's Edge Function secrets), e.g. `ELEVENLABS_API_KEY`.
+1. In Vercel → Project → Settings → Environment Variables, store `ELEVENLABS_API_KEY` (already added by the account owner) and `ELEVENLABS_VOICE_ID` (the selected voice's ID). Set both for Production, then redeploy.
 2. Store the selected voice ID as a non-secret configuration value, e.g. `ELEVENLABS_VOICE_ID`.
-3. Implement an endpoint such as `POST /api/voice` that accepts a bounded text string and selected language, validates length and allowed origin, applies rate limits, and calls ElevenLabs from the server.
-4. The server calls ElevenLabs text-to-speech with the voice ID, multilingual model, the settings above, and the secret API-key header. It returns audio bytes (for example MP3) to the browser.
-5. The browser plays the returned audio with an audio element and keeps browser speech synthesis as a fallback if the endpoint is unavailable.
+3. The `POST /api/voice` endpoint is implemented. It validates same-origin requests, limits text to 2,500 characters, applies a best-effort per-instance request limit, and calls ElevenLabs from the server.
+4. The server calls ElevenLabs text-to-speech with the multilingual model, the settings above, and the secret API-key header. It returns MP3 audio to the browser.
+5. The browser plays the returned audio and keeps browser speech synthesis as a fallback if the endpoint is unavailable.
 6. Test voice quality in pt-BR, English and Spanish, mobile browsers, long answers, error responses, quota exhaustion, CORS, rate limiting, and whether the selected plan permits the intended use.
 
-## Inputs needed before enabling ElevenLabs
+## Remaining activation step
 
-- The selected **Voice ID** (safe to share; it is not an API key).
-- The backend project/provider that will host the endpoint.
-- The public endpoint URL after deployment.
-- The API key must be added directly by the account owner to the backend secret manager. Never send it in chat or commit it to GitHub.
+- Add `ELEVENLABS_VOICE_ID` in Vercel → Project → Settings → Environment Variables. The Voice ID is not a secret, but it should be configured server-side with the API key.
+- After saving, redeploy the Vercel project so the function receives both variables.
+- Test the voice button on the Vercel deployment. If the endpoint is unavailable or ElevenLabs returns an error, the browser voice remains the fallback.
 
-No ElevenLabs API key or backend endpoint is currently configured in this public repository. The browser fallback is implemented; the ElevenLabs connection is not live. Do not describe the portfolio as using ElevenLabs until a secured endpoint has been deployed and tested.
+The API key is never sent to the browser or committed to GitHub. The endpoint has request validation and a best-effort in-memory limit; this is not a substitute for a persistent rate limiter if public traffic grows.
