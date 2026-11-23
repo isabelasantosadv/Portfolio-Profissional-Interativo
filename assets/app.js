@@ -67,24 +67,40 @@ async function ask(){
  }else{delete answerEl.dataset.sources}
 }
 function voiceLocale(){return lang==="pt"?"pt-BR":lang==="en"?"en-US":"es-ES"}
+function cleanSpeechText(value){
+ return String(value||"")
+  .replace(/\\[ROTA:[^\\]]+\\]/gi," ")
+  .replace(/\\[([^\\]]+)\\]\\((?:https?:\\/\\/)?[^)]+\\)/g,"$1")
+  .replace(/https?:\\/\\/\\S+/gi," ")
+  .replace(/\\b(?:https?:\\/\\/)?(?:www\\.)?[\\w-]+\\.(?:com|org|net|io|dev|gov|edu)(?:\\/[^\\s]*)?/gi," ")
+  .replace(/^\\s{0,3}(?:[-•*+]\\s+|\\d+[.)]\\s+)/gm,"")
+  .replace(/^\\s{0,3}#{1,6}\\s*/gm,"")
+  .replace(/[\\*_#`~>]/g,"")
+  .replace(/\\s+/g," ")
+  .trim();
+}
 function setVoiceStatus(message){const status=document.getElementById("voiceStatus");if(status)status.textContent=message||""}
+function preferredSpeechVoice(voices,locale){
+ const prefix=locale.toLowerCase().split("-")[0];
+ const matching=voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith(prefix));
+ const regional=matching.find(v=>v.lang.toLowerCase()===locale.toLowerCase());
+ if(prefix==="pt"){
+  const femalePrefs=["Luciana","Francisca","Helena","Edite","Google português do Brasil","Google Português","Fernanda"];
+  const preferred=matching.find(v=>femalePrefs.some(name=>(v.name||"").toLowerCase().includes(name.toLowerCase())));
+  if(preferred)return preferred;
+ }
+ return regional||matching.find(v=>/female|woman|feminina/i.test(v.name||""))||matching[0]||null;
+}
 function speakAnswer(){
- const text=document.getElementById("answerFloat").textContent.trim();
+ const text=cleanSpeechText(document.getElementById("answerFloat").textContent);
  if(!text)return;
  if(!("speechSynthesis" in window)){setVoiceStatus(lang==="pt"?"Este navegador não oferece leitura de voz.":lang==="en"?"This browser does not support spoken answers.":"Este navegador no admite respuestas habladas.");return}
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(text);
- u.lang=voiceLocale();u.rate=.96;u.pitch=1;
- const chooseVoice=()=>{
-  const voices=speechSynthesis.getVoices()||[];
-  const prefix=u.lang.toLowerCase().split("-")[0];
-  const matching=voices.filter(v=>v.lang&&v.lang.toLowerCase().startsWith(prefix));
-  const regional=matching.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase());
-  const preferred=matching.find(v=>/female|woman|feminina|luciana|francisca|samantha|zira|helena|monica/i.test(v.name||""));
-  u.voice=regional||preferred||matching[0]||null;
- };
+ u.lang=voiceLocale();u.rate=.96;u.pitch=1.05;
+ const chooseVoice=()=>{u.voice=preferredSpeechVoice(speechSynthesis.getVoices()||[],u.lang)};
  chooseVoice();
- if("onvoiceschanged" in speechSynthesis && !speechSynthesis.getVoices().length){
+ if(!speechSynthesis.getVoices().length){
   speechSynthesis.addEventListener("voiceschanged",chooseVoice,{once:true});
  }
  u.onstart=()=>setVoiceStatus(lang==="pt"?"Lendo a resposta em voz alta.":lang==="en"?"Reading the answer aloud.":"Leyendo la respuesta en voz alta.");
