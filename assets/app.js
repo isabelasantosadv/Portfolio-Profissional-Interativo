@@ -75,7 +75,7 @@ function cleanSpeechText(value){
   .replace(/\b(?:www\.)?[\w-]+\.(?:com|org|net|io|dev|gov|edu)(?:\/[^\s]*)?/gi," ")
   .replace(/^\s{0,3}(?:[-•*+]\s+|\d+[.)]\s+)/gm,"")
   .replace(/^\s{0,3}#{1,6}\s*/gm,"")
-  .replace(/[*_#\`~>]/g,"")
+  .replace(/[*_#\x60~>]/g,"")
   .replace(/\s+/g," ")
   .trim();
 }
